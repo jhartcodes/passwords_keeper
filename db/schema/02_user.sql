@@ -1,7 +1,6 @@
-
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS business CASCADE;
-
+DROP TABLE IF EXISTS passwords CASCADE;
 
 
 
@@ -27,11 +26,9 @@ CREATE TABLE business (
 
 CREATE TABLE passwords (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  business_id INTEGER REFERENCES business(id) ON DELETE CASCADE,
-  user_name VARCHAR(255),
+  users_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  business_id INTEGER REFERENCES business(id) ,
+  hello VARCHAR(255),
   password VARCHAR(255),
   encrypted_password VARCHAR(255)
 );
-
-

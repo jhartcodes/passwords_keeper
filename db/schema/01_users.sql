@@ -1,6 +1,6 @@
 -- Drop and recreate Users table (Example)
 
-
+-- notes--
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS business CASCADE;
 

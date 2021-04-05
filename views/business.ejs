@@ -2,16 +2,128 @@
 <html lang="en">
   <head>
     <title>Home Page</title>
+    <!-- Meta Information -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Style Sheets -->
+
+
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js"></script>
   </head>
 
   <body>
-    <h1>Hello World!</h1>
+    <nav> EVENTUAL NAV BAR </nav>
+    <header>
+      <div>
+        <img src=https://74yxs9p9ml-flywheel.netdna-ssl.com/wp-content/themes/axine/img/LOGO.png>
+      </div>
+      <br>
+      <div>
+        <h1>Axine</h1>
+      </div>
+    </header>
+
+     <!-- Page-specific (main) content here -->
+     <main class="container">
+      <section class="create-user">
+
+          <form id="new-user-form" action="/myusers" method="POST"  >
+          <h2 class="form-heading">Add An Employee!</h2>
+          <input name="first-name" type="name" class="form-control" placeholder="First-name" />
+          <input name="last-name" type="name" class="form-control" placeholder="Last-Name" />
+          <input name="Department" type="name" class="form-control" placeholder="Department" />
+          <input name="email" type="email" class="form-control" placeholder="Email" autofocus="true"/>
+          <input name="password" type="password" class="form-control" placeholder="Password" />
+          <input name="passwordConfirm" type="password" class="form-control" placeholder="Password confirm" />
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+        </form>
+
+        <div class="limiter">
+          <table>
+            <thead>
+              <tr class="row100 head">
+                <th class="cell100 column1">First</th>
+                <th class="cell100 column2">Last</th>
+                <th class="cell100 column3">Department</th>
+                <th class="cell100 column4">Start date</th>
+                <th class="cell100 column5">Last Activity</th>
+                <th class="cell100 column6">Email</th>
+                <th class="cell100 column7">Password</th>
+                <th class="cell100 column8">SecurePass</th>
+                <td class="cell100 column9">Active</td>
+              </tr>
+            </thead>
+            <tbody>
+                <td class="cell100 column1">Brandon</td>
+                <td class="cell100 column2">Green</td>
+                <td class="cell100 column3">Engineering</td>
+                <td class="cell100 column4">16 Nov 2012</td>
+                <td class="cell100 column5">1 April 2021</td>
+                <td class="cell100 column6">brandon94@axine.com</td>
+                <td class="cell100 column7">Password!</td>
+                <td class="cell100 column8">${encrypted Passfunction}</td>
+                <td class="cell100 column8">true</td>
+              </tr>
+
+              <td class="cell100 column1">Jason</td>
+              <td class="cell100 column2">Cox</td>
+              <td class="cell100 column3">Marketing</td>
+              <td class="cell100 column4">16 Nov 2012</td>
+              <td class="cell100 column5">1 April 2021</td>
+              <td class="cell100 column6">Jason89@axine.com</td>
+              <td class="cell100 column7">Password!</td>
+              <td class="cell100 column8">${encrypted Passfunction}</td>
+            </tr>
+
+              <td class="cell100 column1">Kathy </td>
+              <td class="cell100 column2">Daniels</td>
+              <td class="cell100 column3">Sales</td>
+              <td class="cell100 column4">16 Nov 2012</td>
+              <td class="cell100 column5">1 April 2021</td>
+              <td class="cell100 column6">KathyD@axine.com</td>
+              <td class="cell100 column7">Password!</td>
+              <td class="cell100 column8">${encrypted Passfunction}</td>
+            </tr>
+
+            <td class="cell100 column1">Elizabeth</td>
+            <td class="cell100 column2">Alvarado</td>
+            <td class="cell100 column3">Finance</td>
+            <td class="cell100 column4">16 Nov 2012</td>
+            <td class="cell100 column5">1 April 2021</td>
+            <td class="cell100 column6">ElizabethA@axine.com</td>
+            <td class="cell100 column7">Password!</td>
+            <td class="cell100 column8">${encrypted Passfunction}</td>
+          </tr>
+
+            <td class="cell100 column1">Michael</td>
+            <td class="cell100 column2">Coleman</td>
+            <td class="cell100 column3">Management</td>
+            <td class="cell100 column4">16 Nov 2012</td>
+            <td class="cell100 column5">1 April 2021</td>
+            <td class="cell100 column6">MichaelC@axine.com</td>
+            <td class="cell100 column7">Password!</td>
+            <td class="cell100 column8">${encrypted Passfunction}</td>
+          </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+    </section>
+
+
+
+
+    </main>
+    <h2></h2>
   </body>
 </html>

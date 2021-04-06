@@ -1,23 +1,28 @@
 
 const express = require('express');
 const router  = express.Router();
+const bcrypt  = require('bcrypt');
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM employees;`)
-      .then(data => {
-        const employees = data.rows;
-        res.json({ employees });
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
+
+    res.render("employees");
+    // db.query(`SELECT * FROM employees;`)
+    //   .then(data => {
+    //     console.log('data.rows',data.rows)
+    //     const employees = data.rows.reverse;
+    //     let templateVars = {employees}
+    //     res.render("employees", templateVars);
+    //   })
+    //   .catch(err => {
+    //     res
+    //       .status(500)
+    //       .json({ error: err.message });
+    //   });
   });
 
-  //api/employees/edit
-  router.get("/edit", (req, res) => {
+  //get all employees as json.
+  router.get("/all", (req, res) => {
     db.query(`SELECT * FROM employees;`)
       .then(data => {
         const employees = data.rows;
@@ -31,21 +36,30 @@ module.exports = (db) => {
   });
 
   router.get("/employees", (req, res) => {
-    db.query(`Select`)
+
 
   })
 
 
-  //post to
-    router.post("/employees", (req, res) => {
+  router.post("/", (req, res) => {
     console.log('req.body', req.body)
-    const password = req.password;
-    bcrypt.genSalt(10, (err, salt) => {bcrypt.hash(password, salt, (err, hash) => {console.log(hash)})});
+    const password = req.body.password;
+    // bcrypt.genSalt(10, (err, salt) => {bcrypt.hash(password, salt, (err, hash) => {console.log('test',hash)})});
+    bcrypt.hash(password, 10, function(err, hash) {
+      console.log('hash', hash, err)
 
-    const secure_pass = bcrypt.hashSync(password, 10)
-    db.query(`INSERT INTO employees (first, last, department, email, password, secure_pass) VALUES ($1,$2,$3,$4,$5,$6) RETURNING * ;`, [`${req.body['first-name']}`, `${req.body['last-name']}`, `${req.body.department}`, `${req.body.email}`, `${req.body.password}`, secure_pass])
+      return db.query(`INSERT INTO employees (first, last, department, email, password, secure_pass) VALUES ($1,$2,$3,$4,$5,$6) RETURNING * ;`, [`${req.body['first-name']}`, `${req.body['last-name']}`, `${req.body.department}`, `${req.body.email}`, `${req.body.password}`, hash])
+      .then(data => {
+      res.redirect('/employees')
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
   });
 
+  });
 
 
   return router;

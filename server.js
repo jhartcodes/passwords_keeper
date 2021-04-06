@@ -48,6 +48,20 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+app.get("/business", (req, res) => {
+  const templateVars = { greeting: 'Hello World!' };
+  res.render("business", templateVars);
+});
+
+app.get("/users", (req, res) => {
+  res.render("users");
+});
+
+// app.post("/business", (req, res) => {
+//   console.log('test', req.body)
+//   res.send("business", templateVars);
+// });
+
 app.get("/", (req, res) => {
   res.render("index");
 });

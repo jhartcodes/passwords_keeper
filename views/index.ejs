@@ -1,1120 +1,123 @@
-<html><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title>Dashboard</title>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
 
-  <!-- Sets initial viewport load and disables zooming  -->
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="shortcut icon" href="fav.ico">
-  <link href="/styles/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="/styles/ionic/css/ionic.css" rel="stylesheet">
-  /* <link href="css/style.css" rel="stylesheet"> */
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-</head>
+  <body>
+    <div class='wrapper'>
+      <%- include('partials/sidebar') %>
+      <div id='content'>
+        <%- include('partials/nav') %>
+        <div class="jumbotron text-center">
+          <h1>Creat New Password</h1>
+          <p>Resize this responsive page to see the effect!</p>
+        </div>
 
-<body ng-app="starter" animation="slide-left-right-ios7" block-ui="main" class="block-ui block-ui-anim-fade grade-a platform-browser platform-win32 platform-ready menu-open" aria-busy="false" data-new-gr-c-s-check-loaded="14.1002.0" data-gr-ext-installed="">
-  <!--<div class="div-center"><toast></toast></div>-->
-  <ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="enter" nav-swipe=""><ion-view id="login" hide-nav-bar="true" class="pane" state="login" nav-view="cached" style="opacity: 0; transform: translate3d(0%, 0px, 0px);">
-  <ion-content padding="true" scroll="false" class="scroll-content ionic-scroll scroll-content-false padding">
-  <div>
-    <a class="button button-icon icon ion-home alignleft" ng-click="goHomePage()"></a>
-    <div class="alignright">
-      <p class="translateLang">
-        <a class="pointer" ng-click="changeLanguage('en')">English</a> |
-        <a class="pointer" ng-click="changeLanguage('zh')">中文</a>
-      </p>
-    </div>
-  </div>
-      <form class="responsive-md ng-valid ng-dirty ng-submitted" style="">
-              <div class="col col-50 col-offset-25">
-                  <div class="header padding text-center">
-                      <img style="width: 70%;height: 70%;" src="img/snappy/business-configuration-logo.png" alt="Your logo here">
+        <div class="container">
+          <!-- <div class="col-sm-5"> -->
+          <!-- </div> -->
+          <div class="col-sm-6">
+                        <!-- <div class="line"></div> -->
+            <!-- <h3>Column 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+            <p>
+              <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                New Password
+              </a>
+
+              <div class="collapse" id="collapseExample">
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Url</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="Url">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Username</label>
+                      <input type="password" class="form-control" id="inputPassword4" placeholder="Username">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress">Password</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Password">
                   </div>
 
-                  <div class="list">
-                      <label class="item item-input">
-                          <input type="text" placeholder="User Name" ng-model="loginInfo.username" class="ng-valid ng-touched ng-dirty ng-empty" style="">
-                      </label>
-                      <label class="item item-input">
-                          <input type="password" placeholder="Password" ng-model="loginInfo.password" class="ng-valid ng-dirty ng-touched ng-empty" style="">
-                      </label>
-                      <label class="item item-input">
-                          <input type="text" placeholder="Store Id / Group Id" ng-model="loginInfo.storeId" class="ng-valid ng-dirty ng-touched ng-empty" style="">
-                      </label>
-                  </div>
+                  <div class="form-row">
 
-                  <button class="button button-block button-positive ng-binding" ng-click="login()">
-                      Log In
-                  </button>
+                    <div class="form-group col-md-4">
+                      <label for="inputState">Folder</label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>social</option>
+                        <option>work related</option>
+                        <option>entertainment</option>
+                      </select>
+                    </div>
 
-                  <div class="row row-no-padding">
-                      <div class="col text-right">
-                          <button ng-click="goToForgotPassword()" class="button button-clear button-light ng-binding">
-                              Forgot password?
-                          </button>
-                      </div>
-                      <!--
-                      <div class="col text-right">
-                          <button class="button button-clear button-light">
-                              Sign up
-                          </button>
-                      </div>
-                      -->
+
                   </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
               </div>
-      </form>
-  </ion-content>
-</ion-view><ion-side-menus enable-menu-with-back-views="false" ng-controller="LoginCtrl" class="pane view" abstract="true" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
-<ion-side-menu-content drag-content="false" class="menu-content pane menu-animated" style="transform: translate3d(275px, 0px, 0px);">
-  <ion-nav-bar class="bar-royal nav-bar-container" nav-bar-transition="ios" nav-bar-direction="none" nav-swipe="">
-    <ion-nav-back-button class="hide"></ion-nav-back-button>
-
-    <ion-nav-buttons side="left" class="hide"></ion-nav-buttons>
-    <ion-nav-buttons side="right" class="hide"></ion-nav-buttons>
-    <div class="div-center"><div class="ng-toast ng-toast--right ng-toast--top "><ul class="ng-toast__list"><!-- ngRepeat: message in messages --></ul></div></div>
-  <div class="nav-bar-block" nav-bar="cached"><ion-header-bar class="bar-royal bar bar-header" align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item"><i class="icon ion-ios-arrow-back"></i>
-    <span class="back-text"><span class="default-title">Back</span><span class="previous-title hide"></span></span></button><div class="buttons buttons-left header-item"><span class="left-buttons">
-      <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-      </button>
-    </span></div><div class="title title-center header-item"></div><div class="buttons buttons-right header-item"><span class="right-buttons">
-      <button class="button button-icon button-clear ng-hide" ng-click="switchStore()" ng-show="showSwitchStore()" style=""> Switch Store
-      </button>
-      <!--
-      <p class='translateLang'>
-        <a class='pointer' ng-click="changeLanguage('en')">English</a>
-        /* <a class='pointer' ng-click="changeLanguage('zh')">中文</a> */
-      </p>
-      -->
-      <!--
-      <select class="dropdown pointer" ng-model="$root.currentLanguage" ng-click="changeLanguage($root.currentLanguage)">
-        <option value="zh"><IMG src="img/language/chinese.jpg" HEIGHT="15" WIDTH="15" align="center">中文</option>
-        <option value="en"><IMG src="img/language/english.jpg" HEIGHT="15" WIDTH="15" align="center">English</option>
-      </select>
-      -->
-    </span></div></ion-header-bar></div><div class="nav-bar-block" nav-bar="active"><ion-header-bar class="bar-royal bar bar-header" align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item"><i class="icon ion-ios-arrow-back"></i>
-    <span class="back-text"><span class="default-title">Back</span><span class="previous-title hide">undefined</span></span></button><div class="buttons buttons-left header-item"><span class="left-buttons">
-      <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-      </button>
-    </span></div><div class="title title-center header-item" style="left: 108px; right: 108px;">Dashboard</div><div class="buttons buttons-right header-item"><span class="right-buttons">
-      <button class="button button-icon button-clear ng-hide" ng-click="switchStore()" ng-show="showSwitchStore()" style=""> Switch Store
-      </button>
-
-      <!--
-      <select class="dropdown pointer" ng-model="$root.currentLanguage" ng-click="changeLanguage($root.currentLanguage)">
-        <option value="zh"><IMG src="img/language/chinese.jpg" HEIGHT="15" WIDTH="15" align="center">中文</option>
-        <option value="en"><IMG src="img/language/english.jpg" HEIGHT="15" WIDTH="15" align="center">English</option>
-      </select>
-      -->
-    </span></div></ion-header-bar></div></ion-nav-bar>
-  <ion-nav-view name="menuContent" class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe=""><ion-view view-title="Dashboard" id="dashboard" class="pane" state="app.dashboard" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
-<ion-content class="slide-in-both-ways scroll-content ionic-scroll  has-header" has-header="true" scroll="true"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
-<!--
-<button type="button" ng-click="print('table-container')" class="btn btn-sm btn-success">
-  <i class="glyphicon glyphicon-plus">
-  </i> Print
-</button>
-<INPUT TYPE="button" onClick="window.print()">
--->
-<div id="table-container">
-<form name="outerForm" class="tab-form-demo ng-pristine ng-valid-date ng-valid ng-valid-required" style="">
-  <div>
-<ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}" ng-transclude="">
-    <li ng-class="{active: active, disabled: disabled}" index="0" heading="Reservation/Lineup Summary" class="active" style="">
-<a href="" ng-click="select()" uib-tab-heading-transclude="" class="ng-binding">Reservation/Lineup Summary</a>
-</li>
-    <li ng-class="{active: active, disabled: disabled}" index="1" heading="Order Summary">
-<a href="" ng-click="select()" uib-tab-heading-transclude="" class="ng-binding">Order Summary</a>
-</li>
-    <li ng-class="{active: active, disabled: disabled}" index="1" heading="Reward Summary">
-<a href="" ng-click="select()" uib-tab-heading-transclude="" class="ng-binding">Reward Summary</a>
-</li>
-    <li ng-class="{active: active, disabled: disabled}" index="1" heading="Membership Summary">
-<a href="" ng-click="select()" uib-tab-heading-transclude="" class="ng-binding">Membership Summary</a>
-</li>
-    <li ng-class="{active: active, disabled: disabled}" index="1" heading="Gift Card Summary">
-<a href="" ng-click="select()" uib-tab-heading-transclude="" class="ng-binding">Gift Card Summary</a>
-</li>
-    <li ng-class="{active: active, disabled: disabled}" index="1" heading="Coupon Summary" on-click="getCouponSummary(storeId)">
-<a href="" ng-click="select()" uib-tab-heading-transclude="" class="ng-binding">Coupon Summary</a>
-</li>
-    <li ng-class="{active: active, disabled: disabled}" index="1" heading="Guest Feeback">
-<a href="" ng-click="select()" uib-tab-heading-transclude="" class="ng-binding">Guest Feeback</a>
-</li>
-    <li ng-class="{active: active, disabled: disabled}" index="1" heading="Table Summary">
-<a href="" ng-click="select()" uib-tab-heading-transclude="" class="ng-binding">Table Summary</a>
-</li>
-    <!--
-    <uib-tab index="2" heading="Tab Two">
-      More Tab Content
-    </uib-tab>
-    -->
-  </ul>
-<div class="tab-content">
-  <!-- ngRepeat: tab in tabs --><div class="tab-pane active" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab" style="">
-
-        <div class="form-group">
-          <div class="container-fluid gray-bg">
-                    <div class="floating-box2"> <strong class="ng-binding">From: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="fromDate" is-open="status.fromopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" datepicker-append-to-body="" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box2"> <strong class="ng-binding">To: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="toDate" is-open="status.toopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box2"> <strong>&nbsp;&nbsp;</strong>
-                        <p class="input-group">
-                        <button type="button" ng-click="onSearchReservationLineup(fromDate, toDate)" class="btn btn-sm btn-success ng-binding">
-                          <i class="glyphicon glyphicon-plus">
-                          </i> Search
-                        </button>
-                        </p>
-                    </div>
+            </p>
           </div>
-          <div class="row">
-            <div class="center">
-              <div class="floating-box">
-                  <table st-table="rowCollection" class="select-table table text-left">
-                    <thead>
-                    <tr>
-                      <th colspan="5" class="text-center"><strong class="ng-binding">RESERVATION SUMMARY</strong></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/reserv.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3"><i class="ng-binding">New Reservation</i></td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/seated.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Reservation Seated</td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/canceled.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Canceled Reservations</td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/serv.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">No Show Parties</td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    </tbody>
-                  </table>
-              </div>
-              <div class="floating-box">
-                  <table st-table="rowCollection" class="select-table table text-left">
-                    <thead>
-                    <tr>
-                      <th colspan="4" class="text-center"><strong class="ng-binding">LINEUP SUMMARY</strong></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/lineup.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">New Lineups</td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/seated.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Lineup Seated</td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/canceled.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Canceled Lineups</td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/waittime.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Longest Wait Time</td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    </tbody>
-                  </table>
-              </div>
-              <div class="floating-box">
-                  <table st-table="rowCollection" class="select-table table text-left">
-                    <thead>
-                    <tr>
-                      <th colspan="5" class="text-center"><strong class="ng-binding">GUEST SUMMARY</strong></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/guests.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Visited Guests</td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-1"><img src="img/icons/newadd.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">New Guests</td>
-                      <td class="col-xs-1"></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    </tbody>
-                  </table>
+          <a class="btn btn-primary" data-toggle="collapse" href="#newCompany" role="button" aria-expanded="false" aria-controls="collapseExample">
+            New Company
+          </a>
+
+          <div class="collapse" id="newCompany">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Company Name</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="company name">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Username</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Username">
                 </div>
               </div>
-          </div>
-        </div>
-    </div><!-- end ngRepeat: tab in tabs --><div class="tab-pane" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab" style="">
+              <div class="form-group">
+                <label for="inputAddress">Password</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="inputAddress2">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputState">State</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputZip">Zip</label>
+                  <input type="text" class="form-control" id="inputZip">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
 
-      <div class="form-group">
-        <div class="container-fluid gray-bg">
-          <div class="floating-box2"> <strong class="ng-binding">From: </strong>
-            <p class="input-group">
-              <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="fromDate" is-open="status.fromopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-              <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-            </p>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
           </div>
-          <div class="floating-box2"> <strong class="ng-binding">To: </strong>
-            <p class="input-group">
-              <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="toDate" is-open="status.toopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-              <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-            </p>
-          </div>
-          <div class="floating-box2"> <strong>&nbsp;&nbsp;</strong>
-            <p class="input-group">
-              <button type="button" ng-click="onSearchOrders(fromDate, toDate)" class="btn btn-sm btn-success ng-binding">
-                <i class="glyphicon glyphicon-plus">
-                </i> Search
-              </button>
-            </p>
-          </div>
-        </div>
-        <!-- -->
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col center-block">
-              <table st-table="rowCollection" class="select-table table text-left">
-                <thead>
-                <tr>
-                  <th colspan="5" class="text-center"><strong class="ng-binding">ORDER SUMMARY</strong></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="col-xs-3 ng-binding">Total Orders</td>
-                  <td class="col-xs-2"><b class="ng-binding"></b></td>
-                </tr>
-                <tr>
-                  <td class="col-xs-3"><i class="ng-binding">Total Pickup Orders</i></td>
-                  <td class="col-xs-2"><b class="ng-binding"></b></td>
-                </tr>
-                <tr>
-                  <td class="col-xs-3 ng-binding">Total Delivery Orders</td>
-                  <td class="col-xs-2"><b class="ng-binding"></b></td>
-                </tr>
-                <tr>
-                  <td class="col-xs-3 ng-binding">Total Dine-In Orders</td>
-                  <td class="col-xs-2"><b class="ng-binding"></b></td>
-                </tr>
-                <tr>
-                  <td class="col-xs-3 ng-binding">Total Sales</td>
-                  <td class="col-xs-2"><b class="ng-binding"></b></td>
-                </tr>
-                <tr>
-                  <td class="col-xs-3 ng-binding">Total Tips</td>
-                  <td class="col-xs-2"><b class="ng-binding"></b></td>
-                </tr>
-                <tr>
-                  <td class="col-xs-3 ng-binding">Total Tax</td>
-                  <td class="col-xs-2"><b class="ng-binding"></b></td>
-                </tr>
-                </tbody>
-              </table>
+        </p>
+      </div>
             </div>
           </div>
+
         </div>
       </div>
-    </div><!-- end ngRepeat: tab in tabs --><div class="tab-pane" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab">
-
-        <div class="form-group">
-          <div class="container-fluid gray-bg">
-                    <div class="floating-box2"> <strong class="ng-binding">From: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="fromDate" is-open="status.fromopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box2"> <strong class="ng-binding">To: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="toDate" is-open="status.toopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box4_inline" style="margin-left:5px"><label for="filter">This Store Only</label><input id="store_only" type="checkbox" ng-model="storeOnlyObj.storeOnly" style="margin-left:10px;text-align:center" class="ng-pristine ng-untouched ng-valid ng-empty"></div>
-                    <div class="floating-box2"> <strong>&nbsp;&nbsp;</strong>
-                        <p class="input-group">
-                        <button type="button" ng-click="onSearchRewards(fromDate, toDate)" class="btn btn-sm btn-success ng-binding">
-                          <i class="glyphicon glyphicon-plus">
-                          </i> Search
-                        </button>
-                        </p>
-                    </div>
-          </div>
-          <!-- -->
-          <div class="container-fluid">
-          <div class="row">
-              <div class="col center-block">
-                  <table st-table="rowCollection" class="select-table table text-left">
-                    <thead>
-                    <tr>
-                      <th colspan="5" class="text-center"><strong class="ng-binding">REWARD SUMMARY</strong></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Points Collected</td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3"><i class="ng-binding">Points Redeemed</i></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Punch Card Points Earned</td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Punch Card Units Redeemed</td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/processAmount.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Total Amount Processed</td>
-                      <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                    </tr>
-                    </tbody>
-                  </table>
-              </div>
-          </div>
-            <div class="row">
-                <div class="col center-block">
-                    <table st-table="rowCollection" class="select-table table text-left">
-                      <thead>
-                      <tr>
-                        <th colspan="4" class="text-center"><strong class="ng-binding">REDEMPTION SUMMARY</strong></th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <!-- ngRepeat: rowKey in getRewardRedeemItems() -->
-                      </tbody>
-                    </table>
-                </div>
-            </div>
-          </div>
-        </div>
-    </div><!-- end ngRepeat: tab in tabs --><div class="tab-pane" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab">
-
-        <div class="form-group">
-          <div class="container-fluid gray-bg">
-                    <div class="floating-box2"> <strong class="ng-binding">From: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="fromDate" is-open="status.fromopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box2"> <strong class="ng-binding">To: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="toDate" is-open="status.toopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box2"> <strong>&nbsp;&nbsp;</strong>
-                        <p class="input-group">
-                        <button type="button" ng-click="onSearchMembership(fromDate, toDate)" class="btn btn-sm btn-success ng-binding">
-                          <i class="glyphicon glyphicon-plus">
-                          </i> Search
-                        </button>
-                        </p>
-                    </div>
-          </div>
-          <!-- -->
-          <div class="container-fluid">
-          <div class="row">
-              <div class="col center-block">
-                  <table st-table="rowCollection" class="select-table table text-left">
-                    <thead>
-                    <tr>
-                      <th colspan="5" class="text-center"><strong class="ng-binding">Membership Summary</strong></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Sale amount (from Membership Balance)</td>
-                      <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3"><i class="ng-binding">Sales Transactions</i></td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Deposit Amount</td>
-                      <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Deposit Bonus Amount</td>
-                      <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Deposit Transactions</td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Adjustment Amount</td>
-                      <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Adjustment Transactions</td>
-                      <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                    </tr>
-                    <tr>
-                      <td class="col-xs-2"><img src="img/icons/processAmount.jpg" height="25" width="25"></td>
-                      <td class="col-xs-3 ng-binding">Tip Amount (from Membership Balance)</td>
-                      <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                    </tr>
-                    <tr>
-                        <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                        <td class="col-xs-3 ng-binding">Membership Fee collected</td>
-                        <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                    </tr>
-                    </tbody>
-                  </table>
-              </div>
-          </div>
-          </div>
-        </div>
-    </div><!-- end ngRepeat: tab in tabs --><div class="tab-pane" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab">
-
-        <div class="form-group">
-          <div class="container-fluid gray-bg">
-            <div class="floating-box2"> <strong class="ng-binding">From: </strong>
-              <p class="input-group">
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="fromDate" is-open="status.fromopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-              </p>
-            </div>
-            <div class="floating-box2"> <strong class="ng-binding">To: </strong>
-              <p class="input-group">
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="toDate" is-open="status.toopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-              </p>
-            </div>
-            <div class="floating-box2"> <strong>&nbsp;&nbsp;</strong>
-              <p class="input-group">
-                <button type="button" ng-click="onSearchGiftCard(fromDate, toDate)" class="btn btn-sm btn-success ng-binding">
-                  <i class="glyphicon glyphicon-plus">
-                  </i> Search
-                </button>
-              </p>
-            </div>
-          </div>
-          <!-- -->
-          <div class="container-fluid">
-            <!-- ngRepeat: giftCardReport in giftcardSummary --><div class="row" ng-repeat="giftCardReport in giftcardSummary" style="">
-              <div class="col center-block">
-                <table st-table="rowCollection" class="select-table table text-left">
-                  <thead>
-                  <tr>
-                    <th colspan="5" class="text-center"><strong class="ng-binding">GIFTCARD REPORT FOR STORE Magic Noodle - Calgary</strong></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Purchased</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Purchased</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Claimed</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Claimed</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div><!-- end ngRepeat: giftCardReport in giftcardSummary --><div class="row" ng-repeat="giftCardReport in giftcardSummary">
-              <div class="col center-block">
-                <table st-table="rowCollection" class="select-table table text-left">
-                  <thead>
-                  <tr>
-                    <th colspan="5" class="text-center"><strong class="ng-binding">GIFTCARD REPORT FOR STORE Magic Noodle Scarborough</strong></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Purchased</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Purchased</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Claimed</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Claimed</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div><!-- end ngRepeat: giftCardReport in giftcardSummary --><div class="row" ng-repeat="giftCardReport in giftcardSummary">
-              <div class="col center-block">
-                <table st-table="rowCollection" class="select-table table text-left">
-                  <thead>
-                  <tr>
-                    <th colspan="5" class="text-center"><strong class="ng-binding">GIFTCARD REPORT FOR STORE Magic Noodle Richmond Hill TEST</strong></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Purchased</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Purchased</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Claimed</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Claimed</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div><!-- end ngRepeat: giftCardReport in giftcardSummary --><div class="row" ng-repeat="giftCardReport in giftcardSummary">
-              <div class="col center-block">
-                <table st-table="rowCollection" class="select-table table text-left">
-                  <thead>
-                  <tr>
-                    <th colspan="5" class="text-center"><strong class="ng-binding">GIFTCARD REPORT FOR STORE Snappy Snappy en</strong></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Purchased</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Purchased</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Claimed</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Claimed</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div><!-- end ngRepeat: giftCardReport in giftcardSummary --><div class="row" ng-repeat="giftCardReport in giftcardSummary">
-              <div class="col center-block">
-                <table st-table="rowCollection" class="select-table table text-left">
-                  <thead>
-                  <tr>
-                    <th colspan="5" class="text-center"><strong class="ng-binding">GIFTCARD REPORT FOR STORE </strong></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Purchased</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Purchased</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Claimed</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Claimed</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div><!-- end ngRepeat: giftCardReport in giftcardSummary --><div class="row" ng-repeat="giftCardReport in giftcardSummary">
-              <div class="col center-block">
-                <table st-table="rowCollection" class="select-table table text-left">
-                  <thead>
-                  <tr>
-                    <th colspan="5" class="text-center"><strong class="ng-binding">GIFTCARD REPORT FOR STORE Magic Noodle Global Payment Test</strong></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Purchased</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Purchased</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Claimed</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Claimed</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div><!-- end ngRepeat: giftCardReport in giftcardSummary --><div class="row" ng-repeat="giftCardReport in giftcardSummary">
-              <div class="col center-block">
-                <table st-table="rowCollection" class="select-table table text-left">
-                  <thead>
-                  <tr>
-                    <th colspan="5" class="text-center"><strong class="ng-binding">GIFTCARD REPORT FOR STORE Marc's Restuarant</strong></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Purchased</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Purchased</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Claimed</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Claimed</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div><!-- end ngRepeat: giftCardReport in giftcardSummary --><div class="row" ng-repeat="giftCardReport in giftcardSummary">
-              <div class="col center-block">
-                <table st-table="rowCollection" class="select-table table text-left">
-                  <thead>
-                  <tr>
-                    <th colspan="5" class="text-center"><strong class="ng-binding">GIFTCARD REPORT FOR STORE Test store for kyle</strong></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Purchased</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Purchased</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Claimed</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Claimed</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div><!-- end ngRepeat: giftCardReport in giftcardSummary --><div class="row" ng-repeat="giftCardReport in giftcardSummary">
-              <div class="col center-block">
-                <table st-table="rowCollection" class="select-table table text-left">
-                  <thead>
-                  <tr>
-                    <th colspan="5" class="text-center"><strong class="ng-binding">GIFTCARD REPORT FOR STORE Magic Noodle Markham</strong></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Purchased</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Purchased</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/points.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3 ng-binding">Cards Claimed</td>
-                    <td class="col-xs-2"><b class="ng-binding">0</b></td>
-                  </tr>
-                  <tr>
-                    <td class="col-xs-2"><img src="img/icons/credits.jpg" height="25" width="25"></td>
-                    <td class="col-xs-3"><i class="ng-binding">Amount Claimed</i></td>
-                    <td class="col-xs-2"><b class="ng-binding">$0.00</b></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div><!-- end ngRepeat: giftCardReport in giftcardSummary -->
-          </div>
-        </div>
-    </div><!-- end ngRepeat: tab in tabs --><div class="tab-pane" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab">
-
-        <div class="form-group">
-          <div class="container-fluid">
-            <div class="row">
-                <div class="col center-block">
-                    <table st-table="couponSumdisplayedCollection" st-safe-src="couponSummary" class="select-table table text-left">
-                      <thead>
-                      <tr>
-                        <th colspan="5" class="text-center"><strong class="ng-binding">COUPON CLAIM REPORT</strong></th>
-                      </tr>
-                      <tr>
-                        <!--
-                        <th st-sort="cardNo" class="text-center"><strong>{{ 'DASHBOARD.COUPONUMMARY.CODE' | translate }}</strong></th>-->
-                        <th st-sort="name" class="text-center"><strong class="ng-binding">NAME</strong></th>
-                        <th st-sort="viewCounter" class="text-center"><strong class="ng-binding">TOTAL VIEWED</strong></th>
-                        <th st-sort="claimCounter" class="text-center"><strong class="ng-binding">CLAIMED</strong></th>
-                        <th st-sort="visitCounter" class="text-center"><strong class="ng-binding">REDEEMED</strong></th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <!-- ngRepeat: row in couponSumdisplayedCollection --><tr ng-repeat="row in couponSumdisplayedCollection" class="" style="">
-                        <!--
-                        <td class="col-xs-2 text-center">{{row.definitionCode}}</td>-->
-                        <td class="col-xs-2 text-center ng-binding">Sample Coupon #1 Spend $20 and get 15%OFF global non-instance</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">8</td>
-                      </tr><!-- end ngRepeat: row in couponSumdisplayedCollection --><tr ng-repeat="row in couponSumdisplayedCollection" class="">
-                        <!--
-                        <td class="col-xs-2 text-center">{{row.definitionCode}}</td>-->
-                        <td class="col-xs-2 text-center ng-binding">Sample Coupon #3 Spend $20 and get 15%OFF global non-instance</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">1</td>
-                      </tr><!-- end ngRepeat: row in couponSumdisplayedCollection --><tr ng-repeat="row in couponSumdisplayedCollection" class="">
-                        <!--
-                        <td class="col-xs-2 text-center">{{row.definitionCode}}</td>-->
-                        <td class="col-xs-2 text-center ng-binding">Hidden Coupon</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">3</td>
-                      </tr><!-- end ngRepeat: row in couponSumdisplayedCollection --><tr ng-repeat="row in couponSumdisplayedCollection" class="">
-                        <!--
-                        <td class="col-xs-2 text-center">{{row.definitionCode}}</td>-->
-                        <td class="col-xs-2 text-center ng-binding">Sample Coupon #1 Spend $20 and get 15%OFF global non-instance</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">3</td>
-                      </tr><!-- end ngRepeat: row in couponSumdisplayedCollection --><tr ng-repeat="row in couponSumdisplayedCollection" class="">
-                        <!--
-                        <td class="col-xs-2 text-center">{{row.definitionCode}}</td>-->
-                        <td class="col-xs-2 text-center ng-binding">Free Lobster Tail with $30 purchase</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">7</td>
-                        <td class="col-xs-2 text-center ng-binding">11</td>
-                      </tr><!-- end ngRepeat: row in couponSumdisplayedCollection --><tr ng-repeat="row in couponSumdisplayedCollection" class="">
-                        <!--
-                        <td class="col-xs-2 text-center">{{row.definitionCode}}</td>-->
-                        <td class="col-xs-2 text-center ng-binding">Limited claim test coupon</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">6</td>
-                        <td class="col-xs-2 text-center ng-binding">3</td>
-                      </tr><!-- end ngRepeat: row in couponSumdisplayedCollection --><tr ng-repeat="row in couponSumdisplayedCollection" class="">
-                        <!--
-                        <td class="col-xs-2 text-center">{{row.definitionCode}}</td>-->
-                        <td class="col-xs-2 text-center ng-binding">100% OFF. Maximum of $30.</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">0</td>
-                        <td class="col-xs-2 text-center ng-binding">11</td>
-                      </tr><!-- end ngRepeat: row in couponSumdisplayedCollection -->
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <td colspan="5" class="text-center">
-                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="10"><!-- ngIf: numPages && pages.length >= 2 --><nav ng-if="numPages &amp;&amp; pages.length >= 2" class="" style=""><ul class="pagination"><!-- ngRepeat: page in pages --><li ng-repeat="page in pages" ng-class="{active: page==currentPage}" class="active"><a href="javascript: void(0);" ng-click="selectPage(page)" class="ng-binding">1</a></li><!-- end ngRepeat: page in pages --><li ng-repeat="page in pages" ng-class="{active: page==currentPage}"><a href="javascript: void(0);" ng-click="selectPage(page)" class="ng-binding">2</a></li><!-- end ngRepeat: page in pages --><li ng-repeat="page in pages" ng-class="{active: page==currentPage}"><a href="javascript: void(0);" ng-click="selectPage(page)" class="ng-binding">3</a></li><!-- end ngRepeat: page in pages --><li ng-repeat="page in pages" ng-class="{active: page==currentPage}"><a href="javascript: void(0);" ng-click="selectPage(page)" class="ng-binding">4</a></li><!-- end ngRepeat: page in pages --></ul></nav><!-- end ngIf: numPages && pages.length >= 2 --></div>
-                          </td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                </div>
-            </div>
-          </div>
-        </div>
-    </div><!-- end ngRepeat: tab in tabs --><div class="tab-pane" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab">
-
-        <div class="form-group">
-          <div class="container-fluid gray-bg">
-                    <div class="floating-box2"> <strong class="ng-binding">From: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="fromDate" is-open="status.fromopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box2"> <strong class="ng-binding">To: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="toDate" is-open="status.toopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box2"> <strong>&nbsp;&nbsp;</strong>
-                        <p class="input-group">
-                        <button type="button" ng-click="onSearchGuestRating(fromDate, toDate)" class="btn btn-sm btn-success ng-binding">
-                          <i class="glyphicon glyphicon-plus">
-                          </i> Search
-                        </button>
-                        </p>
-                    </div>
-          </div>
-          <!-- -->
-          <div class="container-fluid">
-            <div class="row">
-                <div class="col center-block">
-                    <table st-table="rowCollection" class="select-table table text-left">
-                      <thead>
-                      <tr>
-                        <th colspan="5" class="text-center"><strong class="ng-binding">RATING SUMMARY</strong></th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <!-- ngRepeat: avgRating in guestRating.averages --><tr ng-repeat="avgRating in guestRating.averages" class="" style="">
-                        <td class="col-xs-2"><img src="img/icons/rating.png" height="25" width="25"></td>
-                        <td class="col-xs-3 ng-binding">STORE</td>
-                        <td class="col-xs-2"><b class="ng-binding">4.9</b></td>
-                      </tr><!-- end ngRepeat: avgRating in guestRating.averages --><tr ng-repeat="avgRating in guestRating.averages" class="">
-                        <td class="col-xs-2"><img src="img/icons/rating.png" height="25" width="25"></td>
-                        <td class="col-xs-3 ng-binding">食物</td>
-                        <td class="col-xs-2"><b class="ng-binding">5.0</b></td>
-                      </tr><!-- end ngRepeat: avgRating in guestRating.averages --><tr ng-repeat="avgRating in guestRating.averages" class="">
-                        <td class="col-xs-2"><img src="img/icons/rating.png" height="25" width="25"></td>
-                        <td class="col-xs-3 ng-binding">服务</td>
-                        <td class="col-xs-2"><b class="ng-binding">5.0</b></td>
-                      </tr><!-- end ngRepeat: avgRating in guestRating.averages --><tr ng-repeat="avgRating in guestRating.averages" class="">
-                        <td class="col-xs-2"><img src="img/icons/rating.png" height="25" width="25"></td>
-                        <td class="col-xs-3 ng-binding">卫生</td>
-                        <td class="col-xs-2"><b class="ng-binding">5.0</b></td>
-                      </tr><!-- end ngRepeat: avgRating in guestRating.averages --><tr ng-repeat="avgRating in guestRating.averages" class="">
-                        <td class="col-xs-2"><img src="img/icons/rating.png" height="25" width="25"></td>
-                        <td class="col-xs-3 ng-binding">服务等待时间</td>
-                        <td class="col-xs-2"><b class="ng-binding">5.0</b></td>
-                      </tr><!-- end ngRepeat: avgRating in guestRating.averages --><tr ng-repeat="avgRating in guestRating.averages" class="">
-                        <td class="col-xs-2"><img src="img/icons/rating.png" height="25" width="25"></td>
-                        <td class="col-xs-3 ng-binding">性价比</td>
-                        <td class="col-xs-2"><b class="ng-binding">5.0</b></td>
-                      </tr><!-- end ngRepeat: avgRating in guestRating.averages --><tr ng-repeat="avgRating in guestRating.averages" class="">
-                        <td class="col-xs-2"><img src="img/icons/rating.png" height="25" width="25"></td>
-                        <td class="col-xs-3 ng-binding">您会向朋友推荐吗？</td>
-                        <td class="col-xs-2"><b class="ng-binding">10.0</b></td>
-                      </tr><!-- end ngRepeat: avgRating in guestRating.averages -->
-                      </tbody>
-                    </table>
-                </div>
-            </div>
-          </div>
-          <div class="container-fluid">
-            <div class="row">
-                <div class="col center-block">
-                  <table st-table="displayedCollection" st-safe-src="guestRating.guestRatingTransactions" class="select-table table text-center">
-                    <thead>
-                    <tr>
-                      <th colspan="5" class="text-center"><strong class="ng-binding">RATING Transaction</strong></th>
-                    </tr>
-                    <tr>
-                      <th colspan="10"><input st-search="" class="form-control" placeholder="Filter feedback based on telephone or comment" type="search"></th>
-                    </tr>
-                    <tr>
-                      <th st-sort="telephone" class="text-center"><strong class="ng-binding">Telephone</strong></th>
-                      <th class="text-center"><strong class="ng-binding">Dates</strong></th>
-                      <th class="text-center"><strong class="ng-binding">Comments</strong></th>
-                      <th class="text-center"></th>
-                    </tr>
-                    <!--
-                    <tr>
-                      <th st-sort="telephone" class="text-center"><strong>Telephone</strong></th>
-                      <th class="text-center"><strong>Transactions</strong></th>
-                    </tr>
-                    -->
-                    </thead>
-                    <tbody>
-                    <!-- ngRepeat: row in displayedCollection -->
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td colspan="5" class="text-center">
-                          <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="10"><!-- ngIf: numPages && pages.length >= 2 --></div>
-                        </td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-            </div>
-          </div>
-        </div>
-    </div><!-- end ngRepeat: tab in tabs --><div class="tab-pane" ng-repeat="tab in tabs" ng-class="{active: tab.active}" uib-tab-content-transclude="tab">
-
-        <div class="form-group">
-          <div class="container-fluid gray-bg">
-                    <div class="floating-box2"> <strong class="ng-binding">From: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="fromDate" is-open="status.fromopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box2"> <strong class="ng-binding">To: </strong>
-                        <p class="input-group">
-                          <input type="text" class="form-control ng-pristine ng-untouched ng-valid-date ng-not-empty ng-valid ng-valid-required" uib-datepicker-popup="yyyy-MM-dd" ng-model="toDate" is-open="status.toopened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                        </p>
-                    </div>
-                    <div class="floating-box2"> <strong>&nbsp;&nbsp;</strong>
-                        <p class="input-group">
-                        <button type="button" ng-click="onSearchTable(fromDate, toDate)" class="btn btn-sm btn-success ng-binding">
-                          <i class="glyphicon glyphicon-plus">
-                          </i> Search
-                        </button>
-                        </p>
-                    </div>
-          </div>
-          <!-- -->
-          <div class="container-fluid">
-            <div class="row">
-                <div class="col center-block">
-                    <table st-table="tableSumdisplayedCollection" st-safe-src="tableSummary" class="select-table table text-left">
-                      <thead>
-                      <!--
-                      <tr>
-                        <th colspan="4" class="text-center"><strong>Table Summary</strong></th>
-                      </tr>
-                      -->
-                      <tr>
-                        <th class="text-center"></th>
-                        <th st-sort="table" class="text-center"><strong class="ng-binding">TABLE NO</strong></th>
-                        <th class="text-center"></th>
-                        <th st-sort="seated" class="text-center"><strong class="ng-binding">SEATED PARTIES</strong></th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <!-- ngRepeat: row in tableSumdisplayedCollection -->
-                      </tbody>
-                    </table>
-                </div>
-            </div>
-          </div>
-        </div>
-    </div><!-- end ngRepeat: tab in tabs -->
-</div>
-</div>
-</form>
-</div>
-</div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div></ion-content>
-</ion-view></ion-nav-view>
-</ion-side-menu-content>
-
-<ion-side-menu side="left" class="no-print menu menu-left" is-enabled="true" width="275" style="width: 275px; z-index: 0;">
-  <%- include('leftscroll') %>
-</ion-side-menu>
-</ion-side-menus></ion-nav-view>
-
-
-<div block-ui-container="" class="block-ui-container"><div class="block-ui-overlay"></div><div class="block-ui-message-container" aria-live="assertive" aria-atomic="true"><div class="block-ui-message ng-binding" ng-class="$_blockUiMessageClass">Loading ...</div></div></div><div class="backdrop"></div></body></html>
+    </div>
+  </body>
+</html>

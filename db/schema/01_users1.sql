@@ -5,3 +5,7 @@ CREATE TABLE users (
   master_password VARCHAR(255) NOT NULL,
   active BOOLEAN NOT NULL DEFAULT TRUE
 );
+
+
+
+

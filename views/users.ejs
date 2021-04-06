@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+
+  <body>
+    <div class='wrapper'>
+      <%- include('partials/sidebar') %>
+      <div id='content'>
+        <%- include('partials/nav') %>
+        <div class="jumbotron text-center">
+          <h1>My Password</h1>
+          <p></p>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">password</th>
+              <th scope="col">encrypted_password</th>
+              <th scope="col">url</th>
+            </tr>
+          </thead>
+          <tbody id='passwordtable'>
+            <tr>
+              <td>
+                <a href="https://www.facebook.com/login/">facebook</a>
+              </td>
+              <td>secret@secret.com</td>
+              <td>12345</td>
+
+            </tr>
+            <tr>
+              <td>
+                <a href="https://twitter.com/login">twitter</a>
+              </td>
+              <td>secret@secret.com</td>
+              <td>12345</td>
+              <td>
+                <form>
+                  <div class="input-group">
+                      <button class="btn btn-default" type="button" id="copy-button"
+                          data-toggle="tooltip" data-placement="button"
+                          title="Copy to Clipboard">
+                        Copy
+                      </button>
+                    </span>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://accounts.google.com/ServiceLogin/signinchooser?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2Fb%2F1%2FAddMailService&followup=https%3A%2F%2Faccounts.google.com%2Fb%2F1%2FAddMailService&flowName=GlifWebSignIn&flowEntry=ServiceLogin">gmail</a>
+              </td>
+              <td>secret@secret.com</td>
+              <td>12345
+             </td>
+             <td>
+              <form>
+                <div class="input-group">
+                    <button class="btn btn-default" type="button" id="copy-button"
+                        data-toggle="tooltip" data-placement="button"
+                        title="Copy to Clipboard">
+                      Copy
+                    </button>
+                  </span>
+                </div>
+              </form>
+             </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</html>
+

@@ -9,6 +9,19 @@ $(() => {
   });;
 });
 
+$(() => {
+  $.ajax({
+    method: "POST",
+    url: "/api/employees/"
+  }).done((res) => {
+    for(user of users.users) {
+      console.log(user)
+      $("<div>").text(user).appendTo($("body"));
+    }
+  });;
+});
+
+
 //on.click() post will hit
 //helper function to get the users.
 //call the get

@@ -7,14 +7,14 @@
 const createEmployeeElement = (data) => {
   let newHtml =`<tr>
   <td class="cell100 column1">${data.first}</td>
-  <td class="cell100 column2">Green</td>
-  <td class="cell100 column3">Engineering</td>
-  <td class="cell100 column4">16 Nov 2012</td>
-  <td class="cell100 column5">1 April 2021</td>
-  <td class="cell100 column6">brandon94@axine.com</td>
-  <td class="cell100 column7">Password!</td>
-  <td class="cell100 column8">Secure_pass</td>
-  <td class="cell100 column8">true</td>
+  <td class="cell100 column2">${data.first}</td>
+  <td class="cell100 column3">${data.first}</td>
+  <td class="cell100 column4">${data.first}</td>
+  <td class="cell100 column5">${data.first}</td>
+  <td class="cell100 column6">${data.first}</td>
+  <td class="cell100 column7">${data.first}</td>
+  <td class="cell100 column8">${data.first}</td>
+  <td class="cell100 column8">${data.first}</td>
 </tr>`
 return newHtml;
 
@@ -36,7 +36,7 @@ function getAllEmployees() {
     url,
   })
   .then(data => {
-    console.log('test', data)
+    console.log('test......', data)
     renderEmployees(data.employees)
   })
   .catch((err) => {

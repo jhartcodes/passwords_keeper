@@ -6,7 +6,6 @@ CREATE TABLE employees(
   last VARCHAR(50),
   department TEXT,
   start_date DATE,
-  last_activity DATE,
   email VARCHAR(50),
   password VARCHAR(100),
   secure_pass VARCHAR(255),

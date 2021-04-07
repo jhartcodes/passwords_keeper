@@ -5,20 +5,8 @@ const bcrypt  = require('bcrypt');
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-
     res.render("employees");
-    // db.query(`SELECT * FROM employees;`)
-    //   .then(data => {
-    //     console.log('data.rows',data.rows)
-    //     const employees = data.rows.reverse;
-    //     let templateVars = {employees}
-    //     res.render("employees", templateVars);
-    //   })
-    //   .catch(err => {
-    //     res
-    //       .status(500)
-    //       .json({ error: err.message });
-    //   });
+
   });
 
   //get all employees as json.
@@ -40,7 +28,7 @@ module.exports = (db) => {
 
   })
 
-
+  // post to employees page.
   router.post("/", (req, res) => {
     console.log('req.body', req.body)
     const password = req.body.password;

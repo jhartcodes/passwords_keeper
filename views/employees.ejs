@@ -18,7 +18,7 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/employees.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -36,14 +36,15 @@
      <!-- Page-specific (main) content here -->
      <main class="container">
       <section class="create-user">
+        <div class= "errors"> </div>
           <form id="new-user-form" action="/employees" method="POST"  >
           <h2 class="form-heading">Add An Employee!</h2>
-          <input name="first-name" type="name" class="form-control" placeholder="First-name" />
-          <input name="last-name" type="name" class="form-control" placeholder="Last-Name" />
+          <input name="firstName" type="name" class="form-control" placeholder="First-name" />
+          <input name="lastName" type="name" class="form-control" placeholder="Last-Name" />
           <input name="department" type="name" class="form-control" placeholder="Department" />
-          <input name="start-Date" type="date" class="form-control" placeholder="Date" />
+          <input name="startDate" type="date" class="form-control" placeholder="date" />
           <input name="email" type="email" class="form-control" placeholder="Email" autofocus="true"/>
-          <input name="password" type="password" class="form-control" placeholder="Password" />
+          <input name="password" type="password" class="password" placeholder="Password" />
           <input name="passwordConfirm" type="password" class="form-control" placeholder="Password confirm" />
           <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
         </form>

@@ -21,14 +21,11 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-  return router;
-};
-
-module.exports = (db) => {
-  router.get("/business", (req, res) => {
-    db.query(`SELECT * FROM users;`)
+  router.get("/users", (req, res) => {
+    db.query(`SELECT * FROM passwords;`)
       .then(data => {
         const users = data.rows;
+        console.log(users)
         res.json({ users });
       })
       .catch(err => {
@@ -37,11 +34,7 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-  return router;
-};
-
-module.exports = (db) => {
-  router.get("/users", (req, res) => {
+  router.get("/business", (req, res) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;

@@ -54,8 +54,7 @@ app.get("/business", (req, res) => {
 });
 
 app.get("/users", (req, res) => {
-  const templateVars = { greeting: 'Hello World!' };
-  res.render("users", templateVars);
+  res.render("users");
 });
 
 // app.post("/business", (req, res) => {

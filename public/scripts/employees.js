@@ -69,17 +69,22 @@ $(document).ready(function() {
     checkPasswordStrength(password);
 
   });
-// // //form handler
-// $("form").on("submit",function(event) {
-//   event.preventDefault();
-//   if ($(".password").val() = (^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$ {
-//     $(".errors").html('Ooops! the Password must be atleast 8 characters long with 1 capital and 1 special character ');
-//     return $('.errors').hide().slideDown(400);
-//   } else
+// //form handler
+$("form").on("submit",function(event) {
+  // event.preventDefault();
+  // if ($(".password").val() = ^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*/g)  ) {
+  //   $(".errors").html('Ooops! the Password must be atleast 8 characters long with 1 capital and 1 special character ');
+  //   return $('.errors').hide().slideDown(400);
+  // }
+  // else {
+  //   getAllEmployees()
+  // }
 
 
 
-  getAllEmployees()
+
+
+
 });
 
 

@@ -22,10 +22,11 @@ module.exports = (db) => {
       });
   });
 
-  router.get("/business", (req, res) => {
-    db.query(`SELECT * FROM users;`)
+  router.get("/api/users", (req, res) => {
+    db.query(`SELECT * FROM passwords;`)
       .then(data => {
         const users = data.rows;
+        console.log('users:', users)
         res.json({ users });
       })
       .catch(err => {

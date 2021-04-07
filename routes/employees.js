@@ -40,7 +40,7 @@ module.exports = (db) => {
     bcrypt.hash(password, 10, function(err, hash) {
       console.log('hash', hash, err)
 
-      return db.query(`INSERT INTO employees (first, last, department, start_date, email, password, secure_pass) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING * ;`, [`${req.body.firstName}`, `${req.body.lastName}`, `${req.body.department}`, req.body.startDate,`${req.body.email}`, `${req.body.password}`, hash])
+      return db.query(`INSERT INTO employees (email, first, last, department, start_date, password, business_id, secure_pass) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING * ;`, [`${req.body.email}, ${req.body.firstName}`, `${req.body.lastName}`, `${req.body.department}`, req.body.startDate, `${req.body.password}`,`${req.body.business_id}`, hash])
       .then(data => {
       res.redirect('/employees')
       })

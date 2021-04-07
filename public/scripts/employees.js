@@ -1,12 +1,10 @@
-
+// const {checkPasswordStrength} = require('./password-strength.js');
 //example from tweeter to be updated that will render data from the db to the business page.\
 
 
 
 //ajax requests
 const createEmployeeElement = (data) => {
-  console.log('test1',data.start_date)
-  console.log('test',`${moment().format(data.start_date)}`)
   let newHtml =`<tr>
   <td class="cell100 column1">${data.first}</td>
   <td class="cell100 column2">${data.last}</td>
@@ -38,7 +36,6 @@ function getAllEmployees() {
     url,
   })
   .then(data => {
-    console.log('test......', data)
     renderEmployees(data.employees)
   })
   .catch((err) => {
@@ -46,30 +43,46 @@ function getAllEmployees() {
   })
 }
 
-// const addEmployee = function(data) {
+// const delteEmployee = function(data) {
 //   return $.ajax({
-//     method: "POST",
-//     url: "/api/employees",
+//     method: "DELETE",
+//     url: "/employees",
 //     data,
 //   });
 // }
+
+const addEmployee = function(data) {
+  return $.ajax({
+    method: "POST",
+    url: "/api/employees",
+    data,
+  });
+}
 
 $(document).ready(function() {
   // $('.errors').hide();
   console.log('documents ready!')
 
-// //form handler
-$("form").on("submit",function(event) {
-  event.preventDefault();
+  $('#password').keyup(function(event) {
+    let password = $('#password').val();
+    console.log('password', password)
+    checkPasswordStrength(password);
+
+  });
+// // //form handler
+// $("form").on("submit",function(event) {
+//   event.preventDefault();
+//   if ($(".password").val() = (^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$ {
+//     $(".errors").html('Ooops! the Password must be atleast 8 characters long with 1 capital and 1 special character ');
+//     return $('.errors').hide().slideDown(400);
+//   } else
 
 
-
-  if ($(".password").val() = (^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$ {
-    $(".errors").html('Ooops! the Password must be atleast 8 characters long with 1 capital and 1 special character ');
-    return $('.errors').hide().slideDown(400);
-  } else
 
   getAllEmployees()
 });
+
+
+
 
 //for ajax function to show users.

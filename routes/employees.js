@@ -23,6 +23,10 @@ module.exports = (db) => {
       });
   });
 
+  // //router.delete(/employees/delete)(
+  //   db.query(`remove employee`)
+  // )
+
   router.get("/employees", (req, res) => {
 
 

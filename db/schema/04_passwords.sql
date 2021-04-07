@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS passwords CASCADE;
+
 CREATE TABLE passwords (
   id SERIAL PRIMARY KEY,
   password VARCHAR(255),
@@ -8,3 +9,5 @@ CREATE TABLE passwords (
   current_user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   employee_id INTEGER REFERENCES employees(id) ON DELETE CASCADE
 );
+
+

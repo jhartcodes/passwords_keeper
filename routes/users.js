@@ -23,6 +23,9 @@ module.exports = (db) => {
   });
   router.get("/users", (req, res) => {
     db.query(`SELECT * FROM passwords;`)
+
+  router.get("/business", (req, res) => {
+    db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
         console.log(users)
@@ -35,6 +38,8 @@ module.exports = (db) => {
       });
   });
   router.get("/business", (req, res) => {
+
+  router.get("/users", (req, res) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
@@ -48,5 +53,11 @@ module.exports = (db) => {
   });
   return router;
 };
+
+
+
+
+
+
 
 

@@ -9,6 +9,12 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const bcrypt     = require('bcrypt');
+const saltRounds = 10;
+
+
+//BC crypt to salt passwords
+
 
 
 
@@ -37,34 +43,33 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+const employeesRoutes = require("./routes/employees");
+const { name } = require('body-parser');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.use("/employees", employeesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-app.get("/business", (req, res) => {
-  const templateVars = { greeting: 'Hello World!' };
-  res.render("business", templateVars);
-});
+
 
 app.get("/users", (req, res) => {
   res.render("users");
 });
 
-// app.post("/business", (req, res) => {
-//   console.log('test', req.body)
-//   res.send("business", templateVars);
-// });
+//post to employees with insert into employee db;
+
 
 app.get("/", (req, res) => {
   res.render("index");
 });
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

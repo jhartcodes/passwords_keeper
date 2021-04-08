@@ -1,7 +1,6 @@
 11 lines (8 sloc)  243 Bytes
 
 DROP TABLE IF EXISTS business CASCADE;
-
 CREATE TABLE business (
   id SERIAL PRIMARY KEY,
   business_name VARCHAR(255) NOT NULL,

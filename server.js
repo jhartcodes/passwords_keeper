@@ -58,12 +58,11 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-
 app.get("/users", (req, res) => {
   res.render("users");
 });
 
-//post to employees with insert into employee db;
+
 
 
 app.get("/", (req, res) => {

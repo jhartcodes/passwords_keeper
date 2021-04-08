@@ -9,7 +9,6 @@
         <%- include('partials/nav') %>
         <div class="jumbotron text-center">
           <h1>Creat New Password</h1>
-          <p>Resize this responsive page to see the effect!</p>
         </div>
 
         <div class="container">
@@ -31,7 +30,7 @@
                 <label for="inputPassword4">Username</label>
                 <input type="password" class="form-control" id="inputPassword4" placeholder="Username">
               </div>
-              <div class="container" style="width: inherit;height: inherit; display: inherit;">
+              <div class="container" style="width: inherit;height: auto; display: inherit;">
                 <h2>Password Generator</h2>
                 <div class="result-container" >
                   <span id="result"> Final result </span>
@@ -146,6 +145,64 @@
         </div>
       </div>
     </div>
+    <form>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+      <label for="inputEmail4">Url</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Url">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Username</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Username">
+    </div>
+    <div class="container" style="width: inherit;height: auto; display: inherit;">
+      <h2>Password Generator</h2>
+      <div class="result-container" >
+        <span id="result"> Final result </span>
+        <button class="btn" id="clipboard">
+          <i class="far fa-clipboard"></i>
+        </button>
+      </div>
+      <div class="settings">
+        <div class="setting">
+          <label>Password length</label>
+          <input type="number" id="length" min='4' max='20' value='20' />
+        </div>
+        <div class="setting">
+          <label>Include uppercase letters</label>
+          <input type="checkbox" id="uppercase" checked />
+        </div>
+        <div class="setting">
+          <label>Include lowercase letters</label>
+          <input type="checkbox" id="lowercase" checked />
+        </div>
+        <div class="setting">
+          <label>Include numbers</label>
+          <input type="checkbox" id="numbers" checked />
+        </div>
+        <div class="setting">
+          <label>Include symbols</label>
+          <input type="checkbox" id="symbols" checked />
+        </div>
+      </div>
+      <button class="btn btn-large" id="generate">
+        Generate password
+      </button>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputState">Folder</label>
+        <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>social</option>
+        <option>work related</option>
+        <option>entertainment</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
     <%- include('partials/footer') %>
   </body>

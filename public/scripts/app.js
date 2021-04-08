@@ -1,9 +1,9 @@
 $(() => {
   $.ajax({
     method: "GET",
-    url: "api/users/users"
+    url: "/api/users/users"
   }).done((users) => {
-    console.log("test",users)
+    console.log(users)
     const $passwordtable=$('#passwordtable')
     $passwordtable.empty()
     for(user of users.users) {
@@ -28,5 +28,7 @@ $(() => {
 
 
 });
+
+
 
 

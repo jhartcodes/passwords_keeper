@@ -75,6 +75,19 @@ $(() => {
     checkPasswordStrength(password);
 
   });
+  // //form handler
+  // $("form").on("submit",function(event) {
+  // event.preventDefault();
+  // if ($(".password").val() = ^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*/g)  ) {
+  //   $(".errors").html('Ooops! the Password must be atleast 8 characters long with 1 capital and 1 special character ');
+  //   return $('.errors').hide().slideDown(400);
+  // }
+  // else {
+  //   getAllEmployees()
+  // }
+
+
+
 
 
   $.ajax({
@@ -98,20 +111,15 @@ $(() => {
     }
   });
 
-  $("#news-slider").owlCarousel({
-    items : 2,
-    itemsDesktop:[1199,2],
-    itemsDesktopSmall:[980,1],
-    itemsTablet: [600,1],
-    itemsMobile : [550,1],
-    pagination:true,
-    autoPlay:true
+  // $("#news-slider").owlCarousel({
+  //   items : 2,
+  //   itemsDesktop:[1199,2],
+  //   itemsDesktopSmall:[980,1],
+  //   itemsTablet: [600,1],
+  //   itemsMobile : [550,1],
+  //   pagination:true,
+  //   autoPlay:true
+  // });
+
 });
 
-  getAllEmployees()
-});
-
-
-
-
-//for ajax function to show users.

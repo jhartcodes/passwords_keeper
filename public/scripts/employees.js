@@ -87,20 +87,28 @@ $(() => {
     for( employee of res.employees) {
       console.log(employee)
       const $employee = $('<tr>').addClass('employee')
-      const $id = $('<td>').addClass('employee_id').text(employee.id)
+      // const $id = $('<td>').addClass('employee_id').text(employee.id)
       const $deparment = $('<td>').addClass('employee_department').text(employee.department)
       const $first = $('<td>').addClass('employee_firstname').text(employee.first)
       const $last = $('<td>').addClass('employee_lastname').text(employee.last)
       const $password = $('<td>').addClass('employee_password').text(employee.password)
       const $startDate= $('<td>').addClass('employee_startDate').text(moment(employee.start_date).format('LL'))
-      $employeetable.append($employee)
-      $employee.append($id,$deparment,$first,$last,$password,$startDate)
+      $employeetable.prepend($employee)
+      $employee.append($deparment,$first,$last,$password,$startDate)
       // $("<div>").text(JSON.stringify(employee)).appendTo($("body"))
 
     }
   });
 
-
+  $("#news-slider").owlCarousel({
+    items : 2,
+    itemsDesktop:[1199,2],
+    itemsDesktopSmall:[980,1],
+    itemsTablet: [600,1],
+    itemsMobile : [550,1],
+    pagination:true,
+    autoPlay:true
+});
 
   getAllEmployees()
 });

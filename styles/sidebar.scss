@@ -1,0 +1,84 @@
+/* #left {
+  padding-left: 0px;
+    padding-right: 40px;
+} */
+
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  background: #7386D5;
+  color: #fff;
+  transition: all 0.3s;
+  background-image: url("https://i.imgur.com/BBFnNID.jpg");
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+#sidebar .sidebar-header{
+  padding: 20px;
+  max-width: 250px;
+}
+
+#sidebar ul.components{
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+  padding-left: 50px;
+}
+
+#sidebar ul p{
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a{
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #7386D5;
+  background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+  color: #fff;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  /* background: #6d7fcc; */
+}
+
+ul.CTAs {
+  padding: 20px;
+}
+
+ul.CTAs a {
+  text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+  background: #fff;
+  color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+  background: #6d7fcc !important;
+  color: #fff !important;
+}

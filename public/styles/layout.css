@@ -1,0 +1,230 @@
+/* div.row {
+  margin-left: -60;
+  margin-right: 0px;
+  margin-left: -60;
+
+} */
+body {
+  /* font-family: ; */
+  background-color: rgba(218, 192, 240, 0.708);
+  /* background-image: url("https://i.imgur.com/f1pRn3D.jpg"); */
+}
+
+p {
+  /* font-family: ;
+  font-size: ;   */
+  /* font-weight: ;
+  line-height: ; */
+  color: blue;
+}
+
+a,
+a:hover
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+#content {
+  width: 100%;
+  padding: 0px;
+  min-height: 100vh;
+  transition: all 0.3s;
+  margin: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: white;
+  height: auto;
+  transform: rotateY(180deg);
+  background-image: url("https://i.imgur.com/3lQBo4C.jpg");
+}
+
+div.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+main.container {
+  width: 100%;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
+.jumbotron.text-center {
+  background-color: blue;
+  background-image: url("https://i.imgur.com/7t1snhE.jpg");
+  color: aliceblue;
+  font-family: 'Acme', sans-serif;
+}
+
+.post-slide {
+  background: #fff;
+  margin: 0 15px;
+}
+
+.post-slide .post-img {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: auto;
+}
+
+.post-slide .over-layer {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.30s ease 0s;
+}
+
+.post-slide .over-layer:after {
+  color: #fff;
+  content: "+";
+  font-size: 52px;
+  position: absolute;
+  top: 31%;
+  left: 42%;
+}
+
+.post-slide .post-img:hover .over-layer {
+  opacity: 1;
+}
+
+.post-slide .post-img img {
+  width: 100%;
+  height: auto;
+}
+
+.post-slide .post-review {
+  float: left;
+  padding: 1px 20px;
+  width: 50%;
+}
+
+.post-slide .post-title {
+  margin: 0 0 5px 0;
+}
+
+.post-slide .post-title a {
+  color: #3498db;
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+  text-transform: capitalize;
+  transition: color 0.30s ease;
+}
+
+.post-title > a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.post-slide .post-date {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+.post-description {
+  color: #333;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.owl-pagination {
+  margin-top: 40px;
+}
+
+.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
+  background: #3498db;
+}
+
+@media only screen and (max-width: 990px) {
+  .post-slide .over-layer:after {
+    top: 39%;
+    left: 45%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .post-slide .post-img {
+    width: 100%;
+  }
+  .post-slide .post-review {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* @media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+} */

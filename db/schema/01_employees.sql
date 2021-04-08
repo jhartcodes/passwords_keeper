@@ -13,4 +13,7 @@ CREATE TABLE employees (
   active BOOLEAN NOT NULL DEFAULT true
 
 );
+<<<<<<< HEAD
 
+=======
+>>>>>>> scarlet

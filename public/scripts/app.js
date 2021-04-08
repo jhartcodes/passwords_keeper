@@ -6,9 +6,6 @@ $(() => {
     console.log(users)
     const $passwordtable=$('#passwordtable')
     $passwordtable.empty()
-
-
-
     for(user of users.users) {
 
       console.log(user)
@@ -20,7 +17,6 @@ $(() => {
       $passwords.append($password,$encrypted_password,$url)
     }
   });
-
 
 
 

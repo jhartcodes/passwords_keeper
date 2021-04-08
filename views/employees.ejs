@@ -1,105 +1,82 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home Page</title>
-    <!-- Meta Information -->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Style Sheets -->
-
-
-
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/password-strength.css">
-
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/solar/bootstrap.min.css">
-
-
-
-     <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type='text/javascript' src="/scripts/password-strength.js"></script>
-    <script type="text/javascript" src="/scripts/employees.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
-
-  </head>
+  <%- include('partials/head') %>
 
   <body>
-    <!-- need to make this grab the business name in the database.-->
-    <nav> {} </nav>
-    <header>
-      <div>
-        <img src=https://74yxs9p9ml-flywheel.netdna-ssl.com/wp-content/themes/axine/img/LOGO.png>
-      </div>
-      <br>
-      <div>
-        <h1>Axine</h1>
-      </div>
-    </header>
-
-     <!-- Page-specific (main) content here -->
-     <main class="container">
-      <section class="create-user">
-        <div id="password-strength-status"></div>
-        <ul class="pswd_info" id="passwordCriterion">
-            <li data-criterion="length" class="invalid">8-15 <strong>Characters</strong></li>
-            <li data-criterion="capital" class="invalid">At least <strong>one capital letter</strong></li>
-            <li data-criterion="small" class="invalid">At least <strong>one small letter</strong></li>
-            <li data-criterion="number" class="invalid">At least <strong>one number</strong></li>
-            <li data-criterion="special" class="invalid">At least <strong>one Specail Characters </strong></li>
-          </ul>
-
-          <form id="new-user-form" action="/employees" method="POST"  >
-          <h2 class="form-heading">Add An Employee!</h2>
-          <input name="email" type="email" class="form-control" placeholder="email" />
-          <input name="firstName" type="name" class="form-control" placeholder="First-name" />
-          <input name="lastName" type="name" class="form-control" placeholder="Last-Name" />
-          <input name="department" type="name" class="form-control" placeholder="department" />
-          <input name="startDate" type="date" class="form-control" placeholder="date" />
-          <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-          <!-- <input name="password" type="password" class="password" placeholder="Password" /> -->
-          <input name="passwordConfirm" type="password" class="form-control" placeholder="Password confirm" />
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
-        </form>
-        <form method="POST" action="/employees/delete">
-          <button type="submit" class="btn btn-primary">Delete</button>
-        </form>
-
-        <!--tried to follow tiny app delete but might need to be different-->
-
-        <div class="limiter">
-          <table>
-            <thead>
-              <tr class="row100 head">
-                <th class="cell100 column1">First</th>
-                <th class="cell100 column2">Last</th>
-                <th class="cell100 column3">Department</th>
-                <th class="cell100 column4">Start date</th>
-                <th class="cell100 column5">Last Activity</th>
-                <th class="cell100 column6">Email</th>
-                <th class="cell100 column7">Password</th>
-                <th class="cell100 column8">SecurePass</th>
-                <td class="cell100 column9">Active</td>
-              </tr>
-            </thead>
-            <tbody class = "employees">
-            </tbody>
-          </table>
+    <div class='wrapper'>
+      <%- include('partials/sidebar') %>
+      <div id='content'>
+        <%- include('partials/nav') %>
+        <header>
+        <div class="jumbotron text-center">
+          <h1>My Employees</h1>
+          <p></p>
         </div>
+      </header>
+        <table class="table">
+          <thead>
+            <tr>
+              <!-- <th scope="col">#</th> -->
+              <th scope="col">Department</th>
+              <th scope="col">firstName</th>
+              <th scope="col">LastName</th>
+              <th scope="col">Password</th>
+              <th scope="col">start_date</th>
+            </tr>
+          </thead>
+          <tbody id='employeetable'>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div id="news-slider" class="owl-carousel">
+                  <div class="post-slide">
+                      <div class="post-img">
+                          <span class="over-layer"></span>
+                      </div>
+                      <div class="post-review">
+                          <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+                          <span class="post-date">Nov 10,2015</span>
+                          <p class="post-description">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at erat, non placerat urna. Pellentesque in convallis risus. Ut dapibus elementum.
+                          </p>
+                      </div>
+                  </div>
 
+                  <div class="post-slide">
+                      <div class="post-img">
+                          <span class="over-layer"></span>
+                      </div>
+                      <div class="post-review">
+                          <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+                          <span class="post-date">Nov 12,2015</span>
+                          <p class="post-description">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at erat, non placerat urna. Pellentesque in convallis risus. Ut dapibus elementum.
+                          </p>
+                      </div>
+                  </div>
 
-    </section>
-
-
-
-
-    </main>
-    <h2></h2>
-  </body>
+                  <div class="post-slide">
+                      <div class="post-img">
+                          <span class="over-layer"></span>
+                      </div>
+                      <div class="post-review">
+                          <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+                          <span class="post-date">Nov 14,2015</span>
+                          <p class="post-description">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at erat, non placerat urna. Pellentesque in convallis risus. Ut dapibus elementum.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> -->
+    </body>
 </html>
+
+

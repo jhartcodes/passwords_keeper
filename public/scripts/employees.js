@@ -81,11 +81,9 @@ $(() => {
     method: "GET",
     url: "/employees/all"
   }).done((res) => {
-    console.log("^^")
     const $employeetable=$('#employeetable')
     console.log("res",res)
     for( employee of res.employees) {
-      console.log(employee)
       const $employee = $('<tr>').addClass('employee')
       // const $id = $('<td>').addClass('employee_id').text(employee.id)
       const $deparment = $('<td>').addClass('employee_department').text(employee.department)

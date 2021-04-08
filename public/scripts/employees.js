@@ -54,10 +54,22 @@ function getAllEmployees() {
 const addEmployee = function(data) {
   return $.ajax({
     method: "POST",
-    url: "/api/employees",
+    url: "/employees",
     data,
   });
 }
+
+$.ajax({
+  method: "GET",
+  url: "/employees/all"
+}).done((res) => {
+  console.log("res",res)
+  for(employee of res.employees) {
+    $("<div>").text(employee.first).appendTo($("body"))
+
+  }
+});
+
 
 $(document).ready(function() {
   // $('.errors').hide();

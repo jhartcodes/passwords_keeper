@@ -9,26 +9,10 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
-      .then(data => {
-        const users = data.rows;
-        res.json({ users });
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
-  });
   router.get("/users", (req, res) => {
     db.query(`SELECT * FROM passwords;`)
-
-  router.get("/business", (req, res) => {
-    db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
-        console.log(users)
         res.json({ users });
       })
       .catch(err => {
@@ -37,9 +21,8 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-  router.get("/business", (req, res) => {
 
-  router.get("/users", (req, res) => {
+  router.get("/business", (req, res) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;

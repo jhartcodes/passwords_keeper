@@ -23,8 +23,10 @@ module.exports = (db) => {
       });
   });
 
-  // //router.delete(/employees/delete)(
-  //   db.query(`remove employee`)
+  router.delete("/employees/delete", (req, res) => {
+    db.query(`remove employee`)
+  }
+  //
   // )
 
   router.get("/employees", (req, res) => {

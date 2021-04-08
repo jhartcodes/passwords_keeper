@@ -1,4 +1,4 @@
-.navbar {
+.navbar{
   /* padding: 15px 10px;
   background: #fff;
   border: none;
@@ -9,6 +9,8 @@
   background-color: #54106e;
   height: 70px;
   top: 0;
+
+
   /* color : #FFFFFF; */
   padding: 1.5em;
   position: fixed;
@@ -21,13 +23,15 @@
   border: none;
 }
 
+
 /*
 nav span {
  font-family: 'Bungee', cursive;
  font-size: xx-large;
 } */
+
 #rightnav {
   float: right;
-  color: #54106e 255, 255, 255;
+  color: #54106e(255, 255, 255);
   margin-left: 70%;
 }

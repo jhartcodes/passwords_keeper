@@ -2,6 +2,8 @@
   padding-left: 0px;
     padding-right: 40px;
 } */
+
+
 #sidebar {
   min-width: 250px;
   max-width: 250px;
@@ -16,23 +18,23 @@
   margin-left: -250px;
 }
 
-#sidebar .sidebar-header {
+#sidebar .sidebar-header{
   padding: 20px;
   max-width: 250px;
 }
 
-#sidebar ul.components {
+#sidebar ul.components{
   padding: 20px 0;
   border-bottom: 1px solid #47748b;
   padding-left: 50px;
 }
 
-#sidebar ul p {
+#sidebar ul p{
   color: #fff;
   padding: 10px;
 }
 
-#sidebar ul li a {
+#sidebar ul li a{
   padding: 10px;
   font-size: 1.1em;
   display: block;
@@ -43,7 +45,7 @@
   background: #fff;
 }
 
-#sidebar ul li.active > a,
+#sidebar ul li.active>a,
 a[aria-expanded="true"] {
   color: #fff;
 }
@@ -64,10 +66,10 @@ ul.CTAs {
 
 ul.CTAs a {
   text-align: center;
-  font-size: 0.9em !important;
-  display: block;
-  border-radius: 5px;
-  margin-bottom: 5px;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 a.download {

@@ -45,22 +45,8 @@ The following steps are only for _one_ of the group members to perform.
 
 
 
-<div class="limiter">
-          <table>
-            <thead>
-              <tr class="row100 head">
-                <th class="cell100 column1">First</th>
-                <th class="cell100 column2">Last</th>
-                <th class="cell100 column3">Department</th>
-                <th class="cell100 column4">Start date</th>
-                <th class="cell100 column5">Last Activity</th>
-                <th class="cell100 column6">Email</th>
-                <th class="cell100 column7">Password</th>
-                <th class="cell100 column8">SecurePass</th>
-                <td class="cell100 column9">Active</td>
-              </tr>
-            </thead>
-            <tbody class = "employees">
-            </tbody>
-          </table>
-        </div>
+
+
+
+
+

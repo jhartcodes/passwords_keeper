@@ -1,55 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home Page</title>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/passWordCreator.css" type="text/css" />
-
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/createPassword.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+  <%- include('partials/head') %>
 
   <body>
-    <h1><%= greeting %></h1>
-  </body>
+    <div class='wrapper'>
+      <%- include('partials/sidebar') %>
+      <div id='content'>
+        <%- include('partials/nav') %>
+        <div class="jumbotron text-center">
+          <h1>My Password</h1>
+          <p></p>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">password</th>
+              <th scope="col">encrypted_password</th>
+              <th scope="col">url</th>
+            </tr>
+          </thead>
+          <tbody id='passwordtable'>
+            <tr>
+              <td>
+                <a href="https://www.facebook.com/login/">facebook</a>
+              </td>
+              <td>secret@secret.com</td>
+              <td>12345</td>
 
-  <div class="container">
-    <h2>Password Generator</h2>
-    <div class="result-container">
-      <span id="result"> Final result </span>
-      <button class="btn" id="clipboard">
-        <i class="far fa-clipboard"></i>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://twitter.com/login">twitter</a>
+              </td>
+              <td>secret@secret.com</td>
+              <td>12345</td>
+              <td>
+                <form>
+                  <div class="input-group">
+                      <button class="btn btn-default" type="button" id="copy-button"
+                          data-toggle="tooltip" data-placement="button"
+                          title="Copy to Clipboard">
+                        Copy
+                      </button>
+                    </span>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://accounts.google.com/ServiceLogin/signinchooser?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2Fb%2F1%2FAddMailService&followup=https%3A%2F%2Faccounts.google.com%2Fb%2F1%2FAddMailService&flowName=GlifWebSignIn&flowEntry=ServiceLogin">gmail</a>
+              </td>
+              <td>secret@secret.com</td>
+              <td>12345
+             </td>
+             <td>
+              <form>
+                <div class="input-group">
+                    <button class="btn btn-default" type="button" id="copy-button"
+                        data-toggle="tooltip" data-placement="button"
+                        title="Copy to Clipboard">
+                      Copy
+                    </button>
+                  </span>
+                </div>
+              </form>
+             </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Password Generator</h2>
+      <div class="result-container">
+        <span id="result"> Final result </span>
+        <button class="btn" id="clipboard">
+          <i class="far fa-clipboard"></i>
+        </button>
+      </div>
+      <div class="settings">
+        <div class="setting">
+          <label>Password length</label>
+          <input type="number" id="length" min='4' max='20' value='20' />
+        </div>
+        <div class="setting">
+          <label>Include uppercase letters</label>
+          <input type="checkbox" id="uppercase" checked />
+        </div>
+        <div class="setting">
+          <label>Include lowercase letters</label>
+          <input type="checkbox" id="lowercase" checked />
+        </div>
+        <div class="setting">
+          <label>Include numbers</label>
+          <input type="checkbox" id="numbers" checked />
+        </div>
+        <div class="setting">
+          <label>Include symbols</label>
+          <input type="checkbox" id="symbols" checked />
+        </div>
+      </div>
+      <button class="btn btn-large" id="generate">
+        Generate password
       </button>
     </div>
-    <div class="settings">
-      <div class="setting">
-        <label>Password length</label>
-        <input type="number" id="length" min='4' max='20' value='20' />
-      </div>
-      <div class="setting">
-        <label>Include uppercase letters</label>
-        <input type="checkbox" id="uppercase" checked />
-      </div>
-      <div class="setting">
-        <label>Include lowercase letters</label>
-        <input type="checkbox" id="lowercase" checked />
-      </div>
-      <div class="setting">
-        <label>Include numbers</label>
-        <input type="checkbox" id="numbers" checked />
-      </div>
-      <div class="setting">
-        <label>Include symbols</label>
-        <input type="checkbox" id="symbols" checked />
-      </div>
-    </div>
-    <button class="btn btn-large" id="generate">
-      Generate password
-    </button>
-  </div>
 
 </html>
+

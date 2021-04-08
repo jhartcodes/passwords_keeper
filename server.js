@@ -57,8 +57,7 @@ app.use("/employees", employeesRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/users", (req, res) => {
-  const templateVars = { greeting: 'Hello World!' };
-  res.render("users", templateVars);
+  res.render("users");
 });
 
 

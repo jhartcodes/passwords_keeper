@@ -21,22 +21,22 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-
-  // router.get("/", (req, res) => {
-  //   db.query(`SELECT * FROM passwords;`)
-  //     .then(data => {
-  //       const users = data.rows;
-  //       console.log('users:', users)
-  //       res.json({ users });
-  //     })
-  //     .catch(err => {
-  //       res
-  //         .status(500)
-  //         .json({ error: err.message });
-  //     });
-  // });
-
   router.get("/users", (req, res) => {
+    db.query(`SELECT * FROM passwords;`)
+      .then(data => {
+        const users = data.rows;
+        console.log(users)
+        res.json({ users });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+  //delete if not functional
+  router.get("/business", (req, res) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;

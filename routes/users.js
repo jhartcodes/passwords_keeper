@@ -22,19 +22,19 @@ module.exports = (db) => {
       });
   });
 
-  router.get("/api/users", (req, res) => {
-    db.query(`SELECT * FROM passwords;`)
-      .then(data => {
-        const users = data.rows;
-        console.log('users:', users)
-        res.json({ users });
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
-  });
+  // router.get("/", (req, res) => {
+  //   db.query(`SELECT * FROM passwords;`)
+  //     .then(data => {
+  //       const users = data.rows;
+  //       console.log('users:', users)
+  //       res.json({ users });
+  //     })
+  //     .catch(err => {
+  //       res
+  //         .status(500)
+  //         .json({ error: err.message });
+  //     });
+  // });
 
   router.get("/users", (req, res) => {
     db.query(`SELECT * FROM users;`)

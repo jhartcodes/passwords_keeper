@@ -8,7 +8,7 @@ module.exports = (db) => {
 
   //get all employees as json.
   router.get("/all", (req, res) => {
-    db.query(`SELECT last, first,department,password,start_date  FROM employees`)
+    db.query(`SELECT * FROM employees`)
       .then(data => {
         console.log('test', data.rows[0].start_date)
         const employees = data.rows;
@@ -20,11 +20,6 @@ module.exports = (db) => {
       });
   });
 
-  // router.delete("/employees/delete", (req, res) => {
-  //   db.query(`remove employee`)
-  // }
-  //
-  // )
 
 
 
@@ -49,7 +44,25 @@ module.exports = (db) => {
       });
   });
 
-});
+  });
+
+  router.post("/delete/:id", (req, res) => {
+    // db.query(`remove employee`)
+    // const employee = req.body
+    // console.log('test', employee)
+    console.log('req.params:',req.params.id);
+    console.log('req.body:',req.body);
+    return db.query(`DELETE FROM employees WHERE id= $1 ;`, [`${req.params.id}`])
+
+    //grab the employee to delete
+    // const employee = req.body.id
+
+
+
+  });
+
+
+
 
 
   return router;

@@ -51,7 +51,7 @@ const { name } = require('body-parser');
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/employees", employeesRoutes(db));
-app.use("/peach", organizationRoutes(db));
+app.use("/organization", organizationRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
@@ -82,6 +82,15 @@ app.get("/employees", (req, res) => {
 app.get("/peach", (req, res) => {
   res.render("peach");
 
+});
+
+app.get("/pear", (req, res) => {
+  res.render("pear");
+
+});
+
+app.get("/strawberry", (req, res) => {
+  res.render("strawberry");
 });
 
 app.listen(PORT, () => {

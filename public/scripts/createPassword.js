@@ -89,4 +89,7 @@ $(document).ready(function () {
     const symbols = "!@#$%^&*(){}[]=<>/,.";
     return symbols[Math.floor(Math.random() * symbols.length)];
   }
+
+
+
 });

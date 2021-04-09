@@ -31,9 +31,9 @@ module.exports = (db) => {
     bcrypt.hash(password, 10, function(err, hash) {
       console.log('hash', hash, err)
       console.log('weiwei',req.body)
-      return db.query(`INSERT INTO employees (email, first, last, department, start_date, password, secure_pass)
-      VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING * ;`, [`${req.body.email}`, `${req.body.first}`, `${req.body.last}`,
-      `${req.body.department}`, req.body.startDate, `${req.body.password}`, `${req.body.businessName}`,hash])
+      return db.query(`INSERT INTO employees (organization_name, email, first, last, department, start_date, password, secure_pass)
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING * ;`, [`${req.body.businessName}`,`${req.body.email}`, `${req.body.first}`, `${req.body.last}`,
+      `${req.body.department}`, req.body.startDate, `${req.body.password}`,hash])
       .then(data => {
       res.redirect('/employees')
       })
@@ -52,7 +52,9 @@ module.exports = (db) => {
     // console.log('test', employee)
     console.log('req.params:',req.params.id);
     console.log('req.body:',req.body);
-    return db.query(`DELETE FROM employees WHERE id= $1 ;`, [`${req.params.id}`])
+    db.query(`DELETE FROM employees WHERE id= $1 ;`, [`${req.params.id}`]).then(()=>{
+      res.json({})
+    })
 
     //grab the employee to delete
     // const employee = req.body.id

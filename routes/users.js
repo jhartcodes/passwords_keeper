@@ -16,6 +16,7 @@ module.exports = (db) => {
         console.log(users)
         res.json({ users });
       })
+      .then(json => json.sort((a,b)=> a.type - b.type))
       .catch(err => {
         res
           .status(500)

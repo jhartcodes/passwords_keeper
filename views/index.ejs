@@ -1,152 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
+<%- include('partials/head') %>
 
   <body>
     <div class='wrapper'>
       <%- include('partials/sidebar') %>
-      <div id='content'>
-        <%- include('partials/nav') %>
-        <div class="jumbotron text-center">
-          <h1>Creat New Password</h1>
-          <p>Resize this responsive page to see the effect!</p>
-        </div>
+        <div id='content'>
+          <%- include('partials/nav') %>
+            <div class="jumbotron text-center">
+              <h1>Creat New Password</h1>
+            </div>
 
-        <div class="container">
-          <div class="flip-card col-md-6">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="https://i.imgur.com/g0kemSp.jpg" alt="Avatar" >
-              </div>
-              <div class="flip-card-back" id="locker" style="height: inherit;">
-                <main class="container">
-                  <section class="create-user">
-                <form>
-                <div class="form-row">
-                <div class="form-group col-md-6">
-                <label for="inputEmail4">Url</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Url">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Username</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Username">
-              </div>
-              <div class="container">
-                <h2>Password Generator</h2>
-                <div class="result-container">
-                  <span id="result"> Final result </span>
-                  <button class="btn" id="clipboard">
-                    <i class="far fa-clipboard"></i>
-                  </button>
+            <div class="container">
+              <div class="flip-card col-md-6">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://i.imgur.com/g0kemSp.jpg" alt="Avatar">
+                  </div>
+                  <div class="flip-card-back" id="locker" style="height: inherit;">
+                    <main class="container" style="width: inherit;height: inherit">
+                      <section class="create-user" style=" width: inherit;height: inherit;">
+                        <form id="createPassword">
+                          <div class="form-row" style=" width: inherit;height: inherit;">
+                            <div class="form-group col-md-6" style=" width: 100%">
+                              <label for="inputEmail4">Url</label>
+                              <input type="text" class="form-control" id="inputEmail4" placeholder="Url">
+                            </div>
+                            <div class="form-group col-md-6" style=" width: 100%">
+                              <label for="inputUsername">Username</label>
+                              <input type="password" class="form-control" id="inputPassword4" placeholder="Username">
+                            </div>
+                            <div class="form-group col-md-6" style=" width: 100%">
+                              <label for="inputPassword">Password</label>
+                              <div class="input-group">
+                                <input type="text" id="usersPassword" class="form-control" rel='gp' id="inputPassword4"
+                                  placeholder="Password">
+
+                                <span class="btn btn-large" id="generate">
+                                  Generate
+                                </span>
+
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-4">
+                                <label for="inputState">Folder</label>
+                                <select id="inputState" class="form-control">
+                                  <option selected>Choose...</option>
+                                  <option>social</option>
+                                  <option>work related</option>
+                                  <option>entertainment</option>
+                                </select>
+                              </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                      </section>
+                    </main>
+                  </div>
                 </div>
-                <div class="settings">
-                  <div class="setting">
-                    <label>Password length</label>
-                    <input type="number" id="length" min='4' max='20' value='20' />
+              </div>
+
+
+              <div class="flip-card col-md-6">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+
+                    <img src="https://i.imgur.com/Y8zRNgD.jpg" alt="Avatar">
+
+
                   </div>
-                  <div class="setting">
-                    <label>Include uppercase letters</label>
-                    <input type="checkbox" id="uppercase" checked />
-                  </div>
-                  <div class="setting">
-                    <label>Include lowercase letters</label>
-                    <input type="checkbox" id="lowercase" checked />
-                  </div>
-                  <div class="setting">
-                    <label>Include numbers</label>
-                    <input type="checkbox" id="numbers" checked />
-                  </div>
-                  <div class="setting">
-                    <label>Include symbols</label>
-                    <input type="checkbox" id="symbols" checked />
+                  <div class="flip-card-back">
+                    <main class="container">
+                      <section class="create-user">
+                        <div id="password-strength-status"></div>
+                        <ul class="pswd_info" id="passwordCriterion">
+                          <li data-criterion="length" class="invalid">8-15 <strong>Characters</strong></li>
+                          <li data-criterion="capital" class="invalid">At least <strong>one capital letter</strong></li>
+                          <li data-criterion="small" class="invalid">At least <strong>one small letter</strong></li>
+                          <li data-criterion="number" class="invalid">At least <strong>one number</strong></li>
+                          <li data-criterion="special" class="invalid">At least <strong>one Specail Characters </strong>
+                          </li>
+                        </ul>
+
+                        <form id="new-user-form" action="/employees" method="POST">
+                          <h2 class="form-heading">Add An Employee!</h2>
+                          <input name="email" type="email" class="form-control" placeholder="Email" autofocus="true" />
+                          <input name="first" type="name" class="form-control" placeholder="First-name" />
+                          <input name="last" type="name" class="form-control" placeholder="Last-Name" />
+                          <input name="department" type="name" class="form-control" placeholder="Department" />
+                          <input name="startDate" type="date" class="form-control" placeholder="date" />
+                          <select name="businessName" id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>Joel's Business</option>
+                            <option>Priyanka's Business</option>
+                            <option>scarlet's</option>
+                          </select>
+
+                          <input type="password" class="form-control" name="password" id="password"
+                            placeholder="Password">
+                          <!-- <input name="password" type="password" class="password" placeholder="Password" /> -->
+                          <input name="passwordConfirm" type="password" class="form-control"
+                            placeholder="Password confirm" />
+                          <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+                        </form>
+
+
+
+
+                      </section>
+
+
+
+
+                    </main>
                   </div>
                 </div>
-                <button class="btn btn-large" id="generate">
-                  Generate password
+              </div>
+
+
+
+            </div>
+            <div class="container" id="passwordgenerate" style="width: inherit;height: auto; display: inherit;">
+              <h2>Password Generator</h2>
+              <div class="result-container">
+                <span id="result"> Final result </span>
+                <button class="btn" id="clipboard">
+                  <i class="far fa-clipboard"></i>
                 </button>
               </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputState">Folder</label>
-                  <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>social</option>
-                  <option>work related</option>
-                  <option>entertainment</option>
-                  </select>
+              <div class="settings">
+                <div class="setting">
+                  <label>Password length</label>
+                  <input type="number" id="length" min='4' max='20' value='20' />
+                </div>
+                <div class="setting">
+                  <label>Include uppercase letters</label>
+                  <input type="checkbox" id="uppercase" checked />
+                </div>
+                <div class="setting">
+                  <label>Include lowercase letters</label>
+                  <input type="checkbox" id="lowercase" checked />
+                </div>
+                <div class="setting">
+                  <label>Include numbers</label>
+                  <input type="checkbox" id="numbers" checked />
+                </div>
+                <div class="setting">
+                  <label>Include symbols</label>
+                  <input type="checkbox" id="symbols" checked />
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            </section>
-            </main>
-    </div>
-  </div>
-</div>
 
-
-          <div class="flip-card col-md-6">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-
-                <img src="https://i.imgur.com/Y8zRNgD.jpg" alt="Avatar" >
-
-
-              </div>
-              <div class="flip-card-back">
-                <main class="container">
-                  <section class="create-user">
-                    <div id="password-strength-status"></div>
-                    <ul class="pswd_info" id="passwordCriterion">
-                        <li data-criterion="length" class="invalid">8-15 <strong>Characters</strong></li>
-                        <li data-criterion="capital" class="invalid">At least <strong>one capital letter</strong></li>
-                        <li data-criterion="small" class="invalid">At least <strong>one small letter</strong></li>
-                        <li data-criterion="number" class="invalid">At least <strong>one number</strong></li>
-                        <li data-criterion="special" class="invalid">At least <strong>one Specail Characters </strong></li>
-                      </ul>
-
-                      <form id="new-user-form" action="/employees" method="POST"  >
-                      <h2 class="form-heading">Add An Employee!</h2>
-                      <input name="email" type="email" class="form-control" placeholder="Email" autofocus="true"/>
-                      <input name="first" type="name" class="form-control" placeholder="First-name" />
-                      <input name="last" type="name" class="form-control" placeholder="Last-Name" />
-                      <input name="department" type="name" class="form-control" placeholder="Department" />
-                      <input name="startDate" type="date" class="form-control" placeholder="date" />
-                      <select name="businessName"id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>Joel's Business</option>
-                        <option>Priyanka's Business</option>
-                        <option>scarlet's</option>
-                        </select>
-
-                      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                      <!-- <input name="password" type="password" class="password" placeholder="Password" /> -->
-                      <input name="passwordConfirm" type="password" class="form-control" placeholder="Password confirm" />
-                      <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
-                    </form>
-
-
-
-
-                </section>
-
-
-
-
-                </main>
-              </div>
             </div>
-          </div>
-        </p>
-      </div>
-            </div>
-          </div>
 
         </div>
-      </div>
     </div>
+
+    </div>
+    </div>
+    </div>
+
 
     <%- include('partials/footer') %>
   </body>
+
 </html>

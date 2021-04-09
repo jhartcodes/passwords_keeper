@@ -32,8 +32,8 @@ module.exports = (db) => {
       console.log('hash', hash, err)
       console.log('weiwei',req.body)
       return db.query(`INSERT INTO employees (email, first, last, department, start_date, password, secure_pass)
-      VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING * ;`, [`${req.body.email}`, `${req.body.first}`, `${req.body.last}`,
-      `${req.body.department}`, req.body.startDate, `${req.body.password}`, hash])
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING * ;`, [`${req.body.email}`, `${req.body.first}`, `${req.body.last}`,
+      `${req.body.department}`, req.body.startDate, `${req.body.password}`, `${req.body.businessName}`,hash])
       .then(data => {
       res.redirect('/employees')
       })

@@ -6,7 +6,7 @@
 
 
 //ajax requests
-// const createEmployeeElement = (data) => {
+// const createpeachElement = (data) => {
 //   let newHtml =`<tr>
 //   <td class="cell100 column1">${data.first}</td>
 //   <td class="cell100 column2">${data.last}</td>
@@ -22,33 +22,33 @@
 // };
 
 
-// const renderEmployees = function(employees) {
-//   $(".employees").empty();
-//   for (const employee of employees) {
-//     let $temp = createEmployeeElement(employee);
-//     $(".employees").prepend($temp);
+// const renderpeachs = function(peachs) {
+//   $(".peachs").empty();
+//   for (const peach of peachs) {
+//     let $temp = createpeachElement(peach);
+//     $(".peachs").prepend($temp);
 //   }
 // };
 
 
-//request to get all employees
-// function getAllEmployees() {
-//   let url = "/employees/all";
+//request to get all peachs
+// function getAllpeachs() {
+//   let url = "/peachs/all";
 //   return $.ajax({
 //     url,
 //   })
 //   .then(data => {
-//     renderEmployees(data.employees)
+//     renderpeachs(data.peachs)
 //   })
 //   .catch((err) => {
 //     console.log(err)
 //   })
 // }
 
-// const deleteEmployee = function(data) {
+// const deletepeach = function(data) {
 //   return $.ajax({
 //     method: "DELETE",
-//     url: "/employees",
+//     url: "/peachs",
 //     data,
 //   });
 // }
@@ -61,20 +61,7 @@ $(() => {
   // $('.errors').hide();
   console.log('documents ready!')
 
-  const addEmployee = function(data) {
-    return $.ajax({
-      method: "POST",
-      url: "/employees",
-      data,
-    });
-  }
 
-
-  $('#password').keyup(function(event) {
-    let password = $('#password').val();
-    checkPasswordStrength(password);
-
-  });
   // //form handler to
   // $("form").on("submit",function(event) {
   // event.preventDefault();
@@ -83,7 +70,7 @@ $(() => {
   //   return $('.errors').hide().slideDown(400);
   // }
   // else {
-  //   getAllEmployees()
+  //   getAllpeachs()
   // }
 
   function deleteEmployee (id) {
@@ -109,24 +96,25 @@ $(() => {
 
   $.ajax({
     method: "GET",
-    url: "/employees/all"
+    url: "/peach/sth"
   }).done((res) => {
-    const $employeetable=$('#employeetable')
-    for( employee of res.employees) {
-      const $employee = $('<tr>').addClass('employee')
-      // const $id = $('<td>').addClass('employee_id').text(employee.id)
-      const $deparment = $('<td>').addClass('employee_department').text(employee.department)
-      const $first = $('<td>').addClass('employee_firstname').text(employee.first)
-      const $last = $('<td>').addClass('employee_lastname').text(employee.last)
-      const $password = $('<td>').addClass('employee_password').text(employee.password)
-      const $startDate= $('<td>').addClass('employee_startDate').text(moment(employee.start_date).format('LL'))
-      const $organization = $('<td>').addClass('employee_organization').text(employee.organization_name)
-      const $email = $('<td>').addClass('employee_email').text(employee.email)
+    const $peachtable=$('#peachtable')
+    console.log("res",res)
+    for( peach of res.peach) {
+      console.log("^^^^^^^",peach)
+      const $peach = $('<tr>').addClass('peach')
+      // const $id = $('<td>').addClass('peach_id').text(peach.id)
+      const $department = $('<td>').addClass('peach_department').text(peach.department)
+      const $name = $('<td>').addClass('peach_name').text(peach.name)
+      const $password = $('<td>').addClass('peach_password').text(peach.password)
+      const $startDate= $('<td>').addClass('peach_startDate').text(moment(peach.start_date).format('LL'))
+
+      const $email = $('<td>').addClass('peach_email').text(peach.email)
       const $delete = $('<td>')
       const $deleteButton = $('<button>').addClass('delete_button').text('delete').on("click",function(event){
         deleteEmployee(employee.id)
         .then(()=> {
-          $employee.remove()
+          $peach.remove()
         })
         .catch((error) => {
           throw error;
@@ -135,9 +123,9 @@ $(() => {
       });
 
       $delete.append($deleteButton)
-      $employeetable.prepend($employee)
-      $employee.append($last,$first,$email,$password,$deparment,$organization,$startDate,$delete)
-      // $("<div>").text(JSON.stringify(employee)).appendTo($("body"))
+      $peachtable.prepend($peach)
+      $peach.append($name,$email,$password,$department,$startDate,$delete)
+      // $("<div>").text(JSON.stringify(peach)).appendTo($("body"))
 
     }
   });

@@ -3,12 +3,10 @@ $(() => {
     method: "GET",
     url: "/api/users/users"
   }).done((users) => {
-    console.log(users)
     const $passwordtable = $('#passwordtable')
     $passwordtable.empty()
     for (user of users.users) {
 
-      console.log(user)
       const $passwords = $('<tr>').addClass('passwords')
       const $password = $('<td>').addClass('password').text(user.password)
       const $encrypted_password = $('<td>').addClass('encrypted_password').text(user.encrypted_password)

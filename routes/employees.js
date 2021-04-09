@@ -10,7 +10,6 @@ module.exports = (db) => {
   router.get("/all", (req, res) => {
     db.query(`SELECT * FROM employees`)
       .then(data => {
-        console.log('test', data.rows[0].start_date)
         const employees = data.rows;
         res.json({ employees });
       })

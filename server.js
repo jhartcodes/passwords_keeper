@@ -43,6 +43,7 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const employeesRoutes = require("./routes/employees");
+const organizationRoutes = require("./routes/organization");
 const widgetsRoutes = require("./routes/widgets");
 const { name } = require('body-parser');
 
@@ -50,6 +51,7 @@ const { name } = require('body-parser');
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/employees", employeesRoutes(db));
+app.use("/peach", organizationRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
@@ -73,6 +75,12 @@ app.get("/", (req, res) => {
 
 app.get("/employees", (req, res) => {
   res.render("employees");
+
+});
+
+
+app.get("/peach", (req, res) => {
+  res.render("peach");
 
 });
 

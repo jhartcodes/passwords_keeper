@@ -24,7 +24,7 @@ module.exports = (db) => {
       });
   });
 
-  router.post()
+  // router.post()
 
   return router;
 };

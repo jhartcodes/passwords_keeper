@@ -12,5 +12,7 @@ $(() => {
     $("#passwordgenerate").fadeIn()
     $("#usersPassword").focus()
   })
-
+  $('#sidebarCollapse').on('click', function () {
+    $('#sidebar').toggleClass('active');
+  });
 });

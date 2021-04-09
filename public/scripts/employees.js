@@ -111,15 +111,7 @@ $(() => {
     }
   });
 
-  // $("#news-slider").owlCarousel({
-  //   items : 2,
-  //   itemsDesktop:[1199,2],
-  //   itemsDesktopSmall:[980,1],
-  //   itemsTablet: [600,1],
-  //   itemsMobile : [550,1],
-  //   pagination:true,
-  //   autoPlay:true
-  // });
+
 
 });
 

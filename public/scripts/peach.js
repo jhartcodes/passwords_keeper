@@ -31,7 +31,6 @@ $(() => {
     const $peachtable=$('#peachtable')
     console.log("res",res)
     for( peach of res.peach) {
-      console.log("^^^^^^^",peach)
       const $peach = $('<tr>').addClass('peach')
       // const $id = $('<td>').addClass('peach_id').text(peach.id)
       const $department = $('<td>').addClass('peach_department').text(peach.department)

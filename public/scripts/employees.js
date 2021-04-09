@@ -44,7 +44,7 @@
 //   })
 // }
 
-// const delteEmployee = function(data) {
+// const deleteEmployee = function(data) {
 //   return $.ajax({
 //     method: "DELETE",
 //     url: "/employees",
@@ -75,7 +75,7 @@ $(() => {
     checkPasswordStrength(password);
 
   });
-  // //form handler
+  // //form handler to
   // $("form").on("submit",function(event) {
   // event.preventDefault();
   // if ($(".password").val() = ^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*/g)  ) {
@@ -86,6 +86,14 @@ $(() => {
   //   getAllEmployees()
   // }
 
+  function deleteEmployee (id) {
+    return $.ajax({
+      method: "POST",
+      url: `/employees/delete/${id}`
+
+    });
+    //make request to delete handler and then remove table row// done on 116-118?
+  }
 
 
 
@@ -104,8 +112,15 @@ $(() => {
       const $last = $('<td>').addClass('employee_lastname').text(employee.last)
       const $password = $('<td>').addClass('employee_password').text(employee.password)
       const $startDate= $('<td>').addClass('employee_startDate').text(moment(employee.start_date).format('LL'))
+      const $delete = $('<td>')
+      const $deleteButton = $('<button>').addClass('delete_button').text('delete').on("click",function(event){
+        deleteEmployee(employee.id)
+        .then(()=> $employee.remove())
+      });
+
+      $delete.append($deleteButton)
       $employeetable.prepend($employee)
-      $employee.append($deparment,$first,$last,$password,$startDate)
+      $employee.append($deparment,$first,$last,$password,$startDate,$delete)
       // $("<div>").text(JSON.stringify(employee)).appendTo($("body"))
 
     }

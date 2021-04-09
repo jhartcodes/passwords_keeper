@@ -63,7 +63,9 @@ app.get("/users", (req, res) => {
 });
 
 
-
+app.get("/employees/delete", (req, res) => {
+  res.render("employees");
+});
 
 app.get("/", (req, res) => {
   res.render("index");

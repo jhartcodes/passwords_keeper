@@ -37,9 +37,9 @@ module.exports = (db) => {
       res.redirect('/employees')
       })
       .catch(err => {
-        res
+            res
           .status(500)
-          .json({ error: err.message, values: hash});
+          .then(alert("message"))
       });
   });
 

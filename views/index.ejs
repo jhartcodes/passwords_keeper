@@ -130,7 +130,7 @@
                             <option selected>Choose Organization</option>
                             <option>Pear</option>
                             <option>Strawberry</option>
-                            <option>each</option>
+                            <option>Peach</option>
                           </select>
 
                           <input type="password" class="form-control" name="password" id="password"
@@ -138,8 +138,10 @@
                           <!-- <input name="password" type="password" class="password" placeholder="Password" /> -->
                           <input name="passwordConfirm" type="password" class="form-control"
                             placeholder="Password confirm" />
-                          <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+                            <div id='warning'></div>
+                          <button class="btn btn-lg btn-primary btn-block" type="submit" id="create">Create</button>
                         </form>
+
 
 
 
@@ -166,7 +168,7 @@
     </div>
 
 
-    <%- include('partials/footer') %>
+
   </body>
 
 </html>

@@ -242,6 +242,19 @@ button#clipboard.btn {
 .btn-primary {
   background-color: #7dcdd8;
 }
+#warning {
+  font-family: 'New Tegomin', serif;
+  width: 100%;
+}
+ #warning i {
+  border: red solid;
+  color: red;
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+
+ }
+
 @media only screen and (max-width: 990px){
   .post-slide .over-layer:after{
       top:39%;

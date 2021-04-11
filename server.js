@@ -44,6 +44,7 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const employeesRoutes = require("./routes/employees");
 const organizationRoutes = require("./routes/organization");
+const myPasswordsRoutes = require("./routes/myPasswords");
 const widgetsRoutes = require("./routes/widgets");
 const { name } = require('body-parser');
 
@@ -52,6 +53,7 @@ const { name } = require('body-parser');
 app.use("/api/users", usersRoutes(db));
 app.use("/employees", employeesRoutes(db));
 app.use("/organization", organizationRoutes(db));
+app.use("/myPasswords", myPasswordsRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
@@ -92,6 +94,19 @@ app.get("/pear", (req, res) => {
 app.get("/strawberry", (req, res) => {
   res.render("strawberry");
 });
+
+app.get("/social", (req, res) => {
+  res.render("social");
+});
+
+app.get("/workrelated", (req, res) => {
+  res.render("workrelated");
+});
+
+app.get("/entertainment", (req, res) => {
+  res.render("entertainment");
+});
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

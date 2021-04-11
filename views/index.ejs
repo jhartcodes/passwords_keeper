@@ -20,19 +20,20 @@
                   <div class="flip-card-back" id="locker" >
                     <main class="container" style="width: inherit;height: inherit">
                       <section class="create-user" style=" width: inherit;height: inherit;">
-                        <form id="createPassword" style="height: inherit;">
+                        <form action="/users" id="createPassword" style="height: inherit;">
                           <div class="form-row" style=" width: inherit;height: inherit;">
                             <div class="form-group col-md-6" style=" width: 100%">
                               <label for="text">Url</label>
                               <input type="text" class="form-control" id="inputEmail4" placeholder="Url">
                             </div>
                             <div class="form-group col-md-6" >
-                              <label for="inputUsername">Username</label>
-                              <input type="text" class="form-control" id="userName" placeholder="Username">
+                              <label  for="inputUsername">Username</label>
+
+                              <input name="username" type="text" class="form-control" id="userName" placeholder="Username">
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
-                                <label for="inputState">Folder</label>
+                                <label name ="type" for="inputState">Folder</label>
                                 <select id="inputState" class="form-control">
                                   <option selected>Choose...</option>
                                   <option>social</option>
@@ -166,7 +167,7 @@
     </div>
 
 
-    <%- include('partials/footer') %>
+
   </body>
 
 </html>

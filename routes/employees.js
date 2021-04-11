@@ -24,7 +24,7 @@ module.exports = (db) => {
 
   // post to employees page.
   router.post("/", (req, res) => {
-    console.log('req.body', req.body)
+    console.log('test', req.body)
     const password = req.body.password;
     // bcrypt.genSalt(10, (err, salt) => {bcrypt.hash(password, salt, (err, hash) => {console.log('test',hash)})});
     bcrypt.hash(password, 10, function(err, hash) {

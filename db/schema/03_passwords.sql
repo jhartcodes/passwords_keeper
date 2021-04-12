@@ -7,7 +7,8 @@ CREATE TABLE passwords (
   url VARCHAR(255),
   type VARCHAR(50),
   current_user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  employee_id INTEGER REFERENCES employees(id) ON DELETE CASCADE
+  employee_id INTEGER REFERENCES employees(id) ON DELETE CASCADE,
+  username VARCHAR(225)
 );
 
 

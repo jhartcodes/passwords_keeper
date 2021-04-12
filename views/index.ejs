@@ -17,35 +17,23 @@
                   <div class="flip-card-front">
                     <img src="https://i.imgur.com/g0kemSp.jpg" alt="Avatar">
                   </div>
-                  <div class="flip-card-back" id="locker" style="height: inherit;">
+                  <div class="flip-card-back" id="locker" >
                     <main class="container" style="width: inherit;height: inherit">
                       <section class="create-user" style=" width: inherit;height: inherit;">
-                        <form id="createPassword">
+                        <form id="createPassword" style="height: inherit;" action="/mypasswords" method="POST">
                           <div class="form-row" style=" width: inherit;height: inherit;">
                             <div class="form-group col-md-6" style=" width: 100%">
-                              <label for="inputEmail4">Url</label>
-                              <input type="text" class="form-control" id="inputEmail4" placeholder="Url">
+                              <label  for="text">Url</label>
+                              <input name="url" type="text" class="form-control" id="inputEmail4" placeholder="Url">
                             </div>
-                            <div class="form-group col-md-6" style=" width: 100%">
+                            <div class="form-group col-md-6" >
                               <label for="inputUsername">Username</label>
-                              <input type="password" class="form-control" id="inputPassword4" placeholder="Username">
-                            </div>
-                            <div class="form-group col-md-6" style=" width: 100%">
-                              <label for="inputPassword">Password</label>
-                              <div class="input-group">
-                                <input type="text" id="usersPassword" class="form-control" rel='gp' id="inputPassword4"
-                                  placeholder="Password">
-
-                                <span class="btn btn-large" id="generate">
-                                  Generate
-                                </span>
-
-                              </div>
+                              <input  name="username" type="text" class="form-control" id="userName" placeholder="Username">
                             </div>
                             <div class="form-row">
-                              <div class="form-group col-md-4">
+                              <div class="form-group col-md-6">
                                 <label for="inputState">Folder</label>
-                                <select id="inputState" class="form-control">
+                                <select name="type" id="inputState" class="form-control">
                                   <option selected>Choose...</option>
                                   <option>social</option>
                                   <option>work related</option>
@@ -53,8 +41,56 @@
                                 </select>
                               </div>
                             </div>
+                            <label  for="inputPassword">Password</label>
+                            <div class="form-group col-md-12" id="genpass" >
+
+                              <div class="input-group">
+                                <input name="passwords" type="text" id="usersPassword" class="form-control" rel='gp' id="inputPassword4"
+                                  placeholder="Password">
+
+                              </div >
+                                <span class="btn btn-large" id="generate"  >
+                                  Generate
+                                </span>
+                                <button class="btn" id="clipboard" >Copy
+                                  <i class="far fa-clipboard"></i>
+                                </button>
+                              </div>
+
+                            <div>
                             <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
                         </form>
+                        <div class="container" id="passwordgenerate" style="width: inherit;height: auto; display: inherit;">
+                          <h2>Password Generator</h2>
+                          <div class="result-container">
+                            <span id="result"> Final result </span>
+
+                          </div>
+                          <div class="settings">
+                            <div class="setting">
+                              <label>Password length</label>
+                              <input type="number" id="length" min='4' max='20' value='20' />
+                            </div>
+                            <div class="setting">
+                              <label>Include uppercase letters</label>
+                              <input type="checkbox" id="uppercase" checked />
+                            </div>
+                            <div class="setting">
+                              <label>Include lowercase letters</label>
+                              <input type="checkbox" id="lowercase" checked />
+                            </div>
+                            <div class="setting">
+                              <label>Include numbers</label>
+                              <input type="checkbox" id="numbers" checked />
+                            </div>
+                            <div class="setting">
+                              <label>Include symbols</label>
+                              <input type="checkbox" id="symbols" checked />
+                            </div>
+                          </div>
+
+                        </div>
                       </section>
                     </main>
                   </div>
@@ -91,10 +127,10 @@
                           <input name="department" type="name" class="form-control" placeholder="Department" />
                           <input name="startDate" type="date" class="form-control" placeholder="date" />
                           <select name="businessName" id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Joel's Business</option>
-                            <option>Priyanka's Business</option>
-                            <option>scarlet's</option>
+                            <option selected>Choose Organization</option>
+                            <option>Pear</option>
+                            <option>Strawberry</option>
+                            <option>peach</option>
                           </select>
 
                           <input type="password" class="form-control" name="password" id="password"
@@ -102,7 +138,8 @@
                           <!-- <input name="password" type="password" class="password" placeholder="Password" /> -->
                           <input name="passwordConfirm" type="password" class="form-control"
                             placeholder="Password confirm" />
-                          <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+                            <div id="warning"></div>
+                          <button class="btn btn-lg btn-primary btn-block" type="submit" id="create">Create</button>
                         </form>
 
 
@@ -121,38 +158,6 @@
 
 
             </div>
-            <div class="container" id="passwordgenerate" style="width: inherit;height: auto; display: inherit;">
-              <h2>Password Generator</h2>
-              <div class="result-container">
-                <span id="result"> Final result </span>
-                <button class="btn" id="clipboard">
-                  <i class="far fa-clipboard"></i>
-                </button>
-              </div>
-              <div class="settings">
-                <div class="setting">
-                  <label>Password length</label>
-                  <input type="number" id="length" min='4' max='20' value='20' />
-                </div>
-                <div class="setting">
-                  <label>Include uppercase letters</label>
-                  <input type="checkbox" id="uppercase" checked />
-                </div>
-                <div class="setting">
-                  <label>Include lowercase letters</label>
-                  <input type="checkbox" id="lowercase" checked />
-                </div>
-                <div class="setting">
-                  <label>Include numbers</label>
-                  <input type="checkbox" id="numbers" checked />
-                </div>
-                <div class="setting">
-                  <label>Include symbols</label>
-                  <input type="checkbox" id="symbols" checked />
-                </div>
-              </div>
-
-            </div>
 
         </div>
     </div>
@@ -162,7 +167,6 @@
     </div>
 
 
-    <%- include('partials/footer') %>
   </body>
 
 </html>

@@ -70,7 +70,7 @@ $(document).ready(function () {
         generatedPassword += randomFunc[funcName]();
       });
     }
-    console.log(generatedPassword.slice(0,length));
+    // console.log(generatedPassword.slice(0,length));
     const finalPassword = generatedPassword.slice(0, length);
     // console.log("final password", finalPassword);
     return finalPassword;
@@ -89,4 +89,7 @@ $(document).ready(function () {
     const symbols = "!@#$%^&*(){}[]=<>/,.";
     return symbols[Math.floor(Math.random() * symbols.length)];
   }
+
+
+
 });

@@ -13,7 +13,6 @@ module.exports = (db) => {
     db.query(`SELECT * FROM passwords;`)
       .then(data => {
         const users = data.rows;
-        console.log(users)
         res.json({ users });
       })
       .then(json => json.sort((a,b)=> a.type - b.type))

@@ -1,10 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
 
+
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+
+
   <body>
     <div class='wrapper'>
       <%- include('partials/sidebar') %>
+
         <div id='content'>
           <%- include('partials/nav') %>
             <div class="jumbotron text-center">
@@ -31,3 +39,34 @@
     </div>
 
 </html>
+
+      <div id='content'>
+        <%- include('partials/nav') %>
+        <header>
+        <div class="jumbotron text-center">
+          <h1>social</h1>
+          <p></p>
+        </div>
+      </header>
+        <table class="table">
+          <thead>
+            <tr>
+
+              <th scope="col">Password</th>
+              <th scope="col">encrypted_password</th>
+              <th scope="col">url</th>
+
+
+            </tr>
+          </thead>
+          <tbody id='passwordtable'>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    </body>
+</html>
+
+
+

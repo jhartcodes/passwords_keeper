@@ -44,7 +44,6 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const employeesRoutes = require("./routes/employees");
 const organizationRoutes = require("./routes/organization");
-const myPasswordsRoutes = require("./routes/myPasswords");
 const widgetsRoutes = require("./routes/widgets");
 const mypasswordsRoutes = require("./routes/mypasswords");
 const { name } = require('body-parser');
@@ -54,11 +53,7 @@ const { name } = require('body-parser');
 app.use("/api/users", usersRoutes(db));
 app.use("/employees", employeesRoutes(db));
 app.use("/organization", organizationRoutes(db));
-<<<<<<< HEAD
-app.use("/myPasswords", myPasswordsRoutes(db));
-=======
 app.use("/mypasswords", mypasswordsRoutes(db));
->>>>>>> a07d1494ecd537ddc38c5937f40e59f28ee0fb13
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 

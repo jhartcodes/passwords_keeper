@@ -2,9 +2,6 @@ const express = require('express');
 const router  = express.Router();
 module.exports = (db) => {
   router.post("/", (req, res) => {
-    console.log("milky", req.body);
-    console.log("!!!!!!!!!!!")
-    const password = req.body.password;
 
 
       return db.query(`INSERT INTO passwords (password, url, type, username)

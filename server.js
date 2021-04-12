@@ -45,6 +45,7 @@ const usersRoutes = require("./routes/users");
 const employeesRoutes = require("./routes/employees");
 const organizationRoutes = require("./routes/organization");
 const widgetsRoutes = require("./routes/widgets");
+const mypasswordsRoutes = require("./routes/mypasswords");
 const { name } = require('body-parser');
 
 // Mount all resource routes
@@ -52,6 +53,7 @@ const { name } = require('body-parser');
 app.use("/api/users", usersRoutes(db));
 app.use("/employees", employeesRoutes(db));
 app.use("/organization", organizationRoutes(db));
+app.use("/mypasswords", mypasswordsRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 

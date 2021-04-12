@@ -8,7 +8,6 @@ module.exports = (db) => {
   router.get("/peach", (req, res) => {
     // db.query(`SELECT * FROM employees`)
     db.query(`SELECT email,CONCAT(First , ' ' ,  Last) AS Name,department,start_date,password FROM employees WHERE organization_name =$1`, ["Peach"])
-
       .then(data => {
         const peach = data.rows;
         res.json({ peach });

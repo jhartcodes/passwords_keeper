@@ -54,7 +54,6 @@ $(() => {
       $delete.append($deleteButton)
       $peachtable.prepend($peach)
       $peach.append($name,$email,$password,$department,$startDate,$delete)
-      // $("<div>").text(JSON.stringify(peach)).appendTo($("body"))
 
     }
   });

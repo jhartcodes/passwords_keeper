@@ -21,7 +21,6 @@ $(() => {
     url: "/organization/strawberry"
   }).done((res) => {
     const $strawberrytable=$('#strawberrytable')
-    console.log("res",res)
     for( strawberry of res.strawberry) {
       const $strawberry = $('<tr>').addClass('strawberry')
       const $department = $('<td>').addClass('strawberry_department').text(strawberry.department)

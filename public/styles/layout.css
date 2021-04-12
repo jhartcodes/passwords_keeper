@@ -258,6 +258,16 @@ button#clipboard.btn {
   background-color: #7dcdd8;
 }
 
+#warning {
+  font-family: 'Acme', sans-serif;
+}
+
+#warning i {
+  border: red solid;
+  color: red;
+  width: 100%;
+}
+
 @media only screen and (max-width: 990px) {
   .post-slide .over-layer:after {
     top: 39%;

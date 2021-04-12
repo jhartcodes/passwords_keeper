@@ -38,8 +38,8 @@ module.exports = (db) => {
       })
       .catch(err => {
         res
-          .status(500)
-          .json({ error: err.message, values: hash});
+          .status(500).alert(err.message)
+
       });
   });
 

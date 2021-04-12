@@ -1,11 +1,45 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<%- include('partials/head') %>
+
+
+<!DOCTYPE html>
+<html lang="en">
   <%- include('partials/head') %>
+
 
   <body>
     <div class='wrapper'>
       <%- include('partials/sidebar') %>
+
+        <div id='content'>
+          <%- include('partials/nav') %>
+            <div class="jumbotron text-center">
+              <h1>Joes's business</h1>
+              <p></p>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">email</th>
+                  <th scope="col">username</th>
+                  <th scope="col">password</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</html>
+
       <div id='content'>
         <%- include('partials/nav') %>
         <header>
@@ -33,5 +67,6 @@
 
     </body>
 </html>
+
 
 

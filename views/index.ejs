@@ -20,21 +20,24 @@
                   <div class="flip-card-back" id="locker" >
                     <main class="container" style="width: inherit;height: inherit">
                       <section class="create-user" style=" width: inherit;height: inherit;">
-                        <form action="/users" id="createPassword" style="height: inherit;">
+
+                        <form id="createPassword" style="height: inherit;" action="/mypasswords" method="POST">
+                   
                           <div class="form-row" style=" width: inherit;height: inherit;">
                             <div class="form-group col-md-6" style=" width: 100%">
-                              <label for="text">Url</label>
-                              <input type="text" class="form-control" id="inputEmail4" placeholder="Url">
+                              <label  for="text">Url</label>
+                              <input name="url" type="text" class="form-control" id="inputEmail4" placeholder="Url">
                             </div>
                             <div class="form-group col-md-6" >
-                              <label  for="inputUsername">Username</label>
 
-                              <input name="username" type="text" class="form-control" id="userName" placeholder="Username">
+                              <label for="inputUsername">Username</label>
+                              <input  name="username" type="text" class="form-control" id="userName" placeholder="Username">
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
-                                <label name ="type" for="inputState">Folder</label>
-                                <select id="inputState" class="form-control">
+                                <label for="inputState">Folder</label>
+                                <select name="type" id="inputState" class="form-control">
+
                                   <option selected>Choose...</option>
                                   <option>social</option>
                                   <option>work related</option>
@@ -42,11 +45,11 @@
                                 </select>
                               </div>
                             </div>
-                            <label for="inputPassword">Password</label>
+                            <label  for="inputPassword">Password</label>
                             <div class="form-group col-md-12" id="genpass" >
 
                               <div class="input-group">
-                                <input type="text" id="usersPassword" class="form-control" rel='gp' id="inputPassword4"
+                                <input name="passwords" type="text" id="usersPassword" class="form-control" rel='gp' id="inputPassword4"
                                   placeholder="Password">
 
                               </div >
@@ -131,7 +134,7 @@
                             <option selected>Choose Organization</option>
                             <option>Pear</option>
                             <option>Strawberry</option>
-                            <option>each</option>
+                            <option>peach</option>
                           </select>
 
                           <input type="password" class="form-control" name="password" id="password"
@@ -139,7 +142,8 @@
                           <!-- <input name="password" type="password" class="password" placeholder="Password" /> -->
                           <input name="passwordConfirm" type="password" class="form-control"
                             placeholder="Password confirm" />
-                          <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+                            <div id="warning"></div>
+                          <button class="btn btn-lg btn-primary btn-block" type="submit" id="create">Create</button>
                         </form>
 
 
@@ -165,8 +169,6 @@
     </div>
     </div>
     </div>
-
-
 
   </body>
 
